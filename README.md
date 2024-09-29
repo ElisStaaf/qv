@@ -49,3 +49,5 @@ touch "main.c" # Create file
 qv "main.c" # Open file
 ```
 I am greeted to this interface:
+[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/startup.png)
+Great! It started up! I'm writing a simple Hello World app, so i can just write this:

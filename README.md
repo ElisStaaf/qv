@@ -62,3 +62,7 @@ Great! It started up! I'm writing a simple Hello World app, so i can just write 
 As you can see, the syntax highlighting kicked in right away! Now, i save my app with `Ctrl+S`, then quit with `Ctrl+Q`. Then i can run the file
 with my preferred compiler and i will be done with my task. Oh, and also, this text editor is not meant to be anyones main editor, it's way to bad for that. No, this
 editor is meant to be like Nano, a simple command line editor! And, with that, enjoy!
+
+    This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
+    Apache-2.0-license ("For the modified parts of the source code"), if you are confused about 
+    this, that is not my problem and you can probably read about it on the internet somewhere.

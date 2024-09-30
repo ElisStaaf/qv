@@ -1,4 +1,7 @@
 # QV
+[![Build](https://img.shields.io/badge/build_(openSUSE)-Passing-green?logo=opensuse)](https://github.com/ElisStaaf/qv) 
+[![Version]()](https://github.com/ElisStaaf/qv) 
+[![]()](https://github.com/ElisStaaf/qv)  
 QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the [kilo](https://github.com/snaptoken/kilo-src) editor, with a _lot_ of improvements! For
 example: better syntax highlighting! Cool, right?
 

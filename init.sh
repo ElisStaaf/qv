@@ -2,8 +2,8 @@
 
 dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-if [ ! -f "$dir/build/qv.exe" ]; then
-    echo -n "File \"qv.exe\" not found. Build from src? [y/N]:"
+if [ ! -f "$dir/build/qv" ]; then
+    echo -n "File \"qv\" not found. Build from src? [y/N]:"
     read yn
     if [ yn -eq "y" ]; then
         gcc -o build.exe
@@ -12,4 +12,4 @@ if [ ! -f "$dir/build/qv.exe" ]; then
     fi
 fi
 
-echo "alias qv=\"$dir/build/qv.exe\"" >> ~/.bashrc
+echo "alias qv=\"$dir/build/qv\"" >> ~/.bashrc

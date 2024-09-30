@@ -154,6 +154,26 @@ char *CS_HL_keywords[] = {
     "internal|", "enum|", "as|", "using|", "default|", "event|"
 };
 
+char *HTML_HL_extensions[] = { ".htm", ".html", NULL};
+char *HTML_HL_keywords[] = {
+    "<html>", "</html>", "<head>", "</head>", "<body>", "</body>", "<link>", 
+    "<meta>", "<title>", "</title>", "<script>", "</script>", "<!DOCTYPE html>"
+
+    "<div>|", "</div>|", "<p>|", "</p>|", "<h1>|", "</h1>|", "<svg>|", "</svg>|",
+    "<button>|", "</button>|", "<a>|", "</a>|", "<li>|", "</li>|", "<style>|",
+    "</style>|"
+};
+
+char *RUST_HL_extensions[] = { ".rs", ".rlib" };
+char *RUST_HL_keywords[] = {
+    "fn", "for", "if", "where", "while", "struct", "static", "str", "char", "!",
+    "u8", "u16", "u32", "u64", "u128", "i8", "i16", "i32", "i64", "i128", "loop",
+    "crate", "continue", "break", "as", "ref", "Self", "in", "do", "final", "priv",
+
+    "let|", "mut|", "pub|", "const|", "return|", "self|", "async|", "await|", "true|",
+    "false|", "type|", "typeof|", "yield", "try|", "union|", "dyn|"
+};
+
 struct editorSyntax HLDB[] = {
   {
     "C/C++",
@@ -197,6 +217,20 @@ struct editorSyntax HLDB[] = {
     "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
+  {
+    "HTML",
+    HTML_HL_extensions,
+    HTML_HL_keywords,
+    "", "<!--", "-->",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Rust",
+    RUST_HL_extensions,
+    RUST_HL_keywords,
+    "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  }
 };
 
 #define HLDB_ENTRIES (sizeof(HLDB) / sizeof(HLDB[0]))
@@ -1132,6 +1166,15 @@ void initEditor() {
 
   if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
   E.screenrows -= 2;
+}
+
+void readConfig() {
+  FILE *qvrc;
+  if (access(qvrc, F_OK) == 0) {
+    qvrc = fopen("~/.config/qv/.qvrc", "r");
+    char content[10000000000000]
+    fgets(content, 10000000000000, qvrc);
+  } else {  }
 }
 
 int main(int argc, char *argv[]) {

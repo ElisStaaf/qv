@@ -1,6 +1,6 @@
 # QV
-[![Build](https://img.shields.io/badge/build_(openSUSE)-Passin-brightgreen?logo=opensuse)](https://github.com/ElisStaaf/qv) 
-[![Version](https://img.shields.io/badge/Version-1.0.1-darkblue)](https://github.com/ElisStaaf/qv)
+[![Build](https://img.shields.io/badge/build_(openSUSE)-Passing-brightgreen?logo=opensuse)](https://github.com/ElisStaaf/qv) 
+[![Version](https://img.shields.io/badge/Version-1.0.2-darkblue)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
 QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the [kilo](https://github.com/snaptoken/kilo-src) editor, with a _lot_ of improvements! For
 example: better syntax highlighting! Cool, right?
@@ -47,6 +47,7 @@ Currently, QV includes syntax highlighting for the following languages:
 -  C#
 -  HTML
 -  Rust
+-  CSS
   
 But you can ofcourse modify the source-code to add more! I shall for this tutorial
 use the "C" programming language.

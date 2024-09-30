@@ -19,7 +19,7 @@
 
 /*** defines ***/
 
-#define QV_VERSION "1.0.0"
+#define QV_VERSION "1.0.2"
 #define QV_TAB_STOP 8
 #define QV_QUIT_TIMES 3
 

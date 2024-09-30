@@ -19,7 +19,7 @@
 
 /*** defines ***/
 
-#define QV_VERSION "0.0.1"
+#define QV_VERSION "1.0.0"
 #define QV_TAB_STOP 8
 #define QV_QUIT_TIMES 3
 
@@ -157,7 +157,7 @@ char *CS_HL_keywords[] = {
 char *HTML_HL_extensions[] = { ".htm", ".html", NULL};
 char *HTML_HL_keywords[] = {
     "<html>", "</html>", "<head>", "</head>", "<body>", "</body>", "<link>", 
-    "<meta>", "<title>", "</title>", "<script>", "</script>", "<!DOCTYPE html>"
+    "<meta>", "<title>", "</title>", "<script>", "</script>",
 
     "<div>|", "</div>|", "<p>|", "</p>|", "<h1>|", "</h1>|", "<svg>|", "</svg>|",
     "<button>|", "</button>|", "<a>|", "</a>|", "<li>|", "</li>|", "<style>|",
@@ -172,6 +172,15 @@ char *RUST_HL_keywords[] = {
 
     "let|", "mut|", "pub|", "const|", "return|", "self|", "async|", "await|", "true|",
     "false|", "type|", "typeof|", "yield", "try|", "union|", "dyn|"
+};
+
+char *CSS_HL_extensions[] = { ".css" };
+char *CSS_HL_keywords[] = {
+    "color", "backround-color", "transition-duration", "calc", "all", "content", "padding",
+    "quotes", "border", "z-index",
+
+    "@charset|", "@media|", "@keyframes|", "@import|", "@font-feature-values|", 
+    "@font-face|"
 };
 
 struct editorSyntax HLDB[] = {
@@ -221,7 +230,7 @@ struct editorSyntax HLDB[] = {
     "HTML",
     HTML_HL_extensions,
     HTML_HL_keywords,
-    "", "<!--", "-->",
+    "<!DOCTYPE html>", "<!--", "-->",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {
@@ -229,6 +238,13 @@ struct editorSyntax HLDB[] = {
     RUST_HL_extensions,
     RUST_HL_keywords,
     "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "CSS",
+    CSS_HL_extensions,
+    CSS_HL_keywords,
+    "/**", "/*", "/*",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   }
 };
@@ -870,7 +886,7 @@ void editorDrawRows(struct abuf *ab) {
       if (E.numrows == 0 && y == E.screenrows / 3) {
         char welcome[80];
         int welcomelen = snprintf(welcome, sizeof(welcome),
-          "Qv editor -- version %s", QV_VERSION);
+          "QV editor -- version %s", QV_VERSION);
         if (welcomelen > E.screencols) welcomelen = E.screencols;
         int padding = (E.screencols - welcomelen) / 2;
         if (padding) {
@@ -1166,15 +1182,6 @@ void initEditor() {
 
   if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
   E.screenrows -= 2;
-}
-
-void readConfig() {
-  FILE *qvrc;
-  if (access(qvrc, F_OK) == 0) {
-    qvrc = fopen("~/.config/qv/.qvrc", "r");
-    char content[10000000000000]
-    fgets(content, 10000000000000, qvrc);
-  } else {  }
 }
 
 int main(int argc, char *argv[]) {

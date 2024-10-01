@@ -1,2 +1,2 @@
 :qv
-    %USERPROFILE%/qv
+    %USERPROFILE%/qv/qv

@@ -6,22 +6,50 @@ QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor b
 editor, with a _lot_ of improvements! For
 example: better syntax highlighting! Cool, right?
 
+Requirements
+-------
+- Either make or gcc
+- Git or Github CLI (optional)
+- One of the following shells:
+  - Sh
+  - Bash
+  - Zsh
+  - Fish
+  - PowerShell
+  - Cmd.exe
+
 Install
 -------
-To install, simply:
+To install, you can use this handy table to find out what to do:
+
+| Application | Command                                                                                                                  |
+| ----------- | -------                                                                                                                  |
+| Git         | git clone https://github.com/ElisStaaf/qv ~/qv                                                                           |
+| Github CLI  | gh repo clone ElisStaaf/qv ~/qv                                                                                          |
+| cURL        | curl -s https://github.com/ElisStaaf/qv/{src/qv.c,init/init.sh,init/init.ps1,init/init.bat,init/init.fish,Makefile} ~/qv |
+
+After this, you'd want to use "make" to initialize an executable:
 ```bash
-git clone --depth 1 https://github.com/ElisStaaf/qv ~/qv
+cd ~/qv
+make
 ```
+If you don't have make installed on your system; you can use GCC:
+```bash
+cd ~/qv
+gcc -o qv src/qv.c
+```
+You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
+and a copy of make [*here*](https://www.gnu.org/software/make/).
 Then you want to initialize the editor via your shell, here is an
 informative table on what shells are supported (Note that you may
 need to change permissions for some of these):
 
-| Shell      | File      | Init                                                                        |
-| -----      | ----      | ----                                                                        |
-| Sh         | init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
-| Powershell | init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
-| Fish       | init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
-| Cmd.exe    | init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
+| Shell       | File      | Init                                                                        |
+| -----       | ----      | ----                                                                        |
+| Sh/Bash/Zsh | init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
+| Powershell  | init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
+| Fish        | init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
+| Cmd.exe     | init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
 
 
 Get Started

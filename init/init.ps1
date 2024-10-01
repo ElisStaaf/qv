@@ -1,3 +1,3 @@
 "function qv {
-    $env:USERPROFILE/qv/build/qv.exe
+    $env:USERPROFILE/qv/qv
 }" >> $env:USERPROFILE/Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1

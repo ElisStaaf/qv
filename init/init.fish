@@ -1,6 +1,6 @@
 # /usr/bin/fish
 
 echo "function qv
-    ~/qv/build/qv.exe
+    ~/qv/qv
 end
 " >> ~/.config/fish/config.fish

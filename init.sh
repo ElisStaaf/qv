@@ -3,12 +3,19 @@
 dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 if [ ! -f "$dir/build/qv" ]; then
-    echo -n "File \"qv\" not found. Build from src? [y/N]:"
+    echo -n "File \"qv\" not found. Build from source? [y/N]:"
     read yn
     if [ yn -eq "y" ]; then
-        gcc -o build.exe
+        if [ -f "$dir/src/qv.c"]; then
+            gcc -o "$dir/build/qv" "$dir/src/qv.c"
+            echo "_OS_EXIT: _EXIT_CODE=0"
+        else
+            echo "Couldn't find $dir/src/qv, maybe this file is in the wrong directory?"
+            echo "_OS_EXIT: _EXIT_CODE=1"
+        fi
     else
         echo "Exiting process..."
+        echo "_OS_EXIT: _EXIT_CODE=0"
     fi
 fi
 

@@ -19,7 +19,7 @@
 
 /*** defines ***/
 
-#define QV_VERSION "1.0.2"
+#define QV_VERSION "1.0.3"
 #define QV_TAB_STOP 8
 #define QV_QUIT_TIMES 3
 
@@ -157,7 +157,7 @@ char *CS_HL_keywords[] = {
     "internal|", "enum|", "as|", "using|", "default|", "event|"
 };
 
-char *HTML_HL_extensions[] = { ".htm", ".html", NULL};
+char *HTML_HL_extensions[] = { ".htm", ".html", NULL };
 char *HTML_HL_keywords[] = {
     "<html>", "</html>", "<head>", "</head>", "<body>", "</body>", "<link>", 
     "<meta>", "<title>", "</title>", "<script>", "</script>",
@@ -167,7 +167,7 @@ char *HTML_HL_keywords[] = {
     "</style>|"
 };
 
-char *RUST_HL_extensions[] = { ".rs", ".rlib" };
+char *RUST_HL_extensions[] = { ".rs", ".rlib", NULL };
 char *RUST_HL_keywords[] = {
     "fn", "for", "if", "where", "while", "struct", "static", "str", "char", "!",
     "u8", "u16", "u32", "u64", "u128", "i8", "i16", "i32", "i64", "i128", "loop",
@@ -177,13 +177,22 @@ char *RUST_HL_keywords[] = {
     "false|", "type|", "typeof|", "yield", "try|", "union|", "dyn|"
 };
 
-char *CSS_HL_extensions[] = { ".css" };
+char *CSS_HL_extensions[] = { ".css", NULL };
 char *CSS_HL_keywords[] = {
     "color", "backround-color", "transition-duration", "calc", "all", "content", "padding",
     "quotes", "border", "z-index",
 
     "@charset|", "@media|", "@keyframes|", "@import|", "@font-feature-values|", 
     "@font-face|"
+};
+
+char *RUBY_HL_extensions[] = { ".rb" ".erb", NULL };
+char *RUBY_HL_keywords[] = {
+    "alias", "and", "begin", "end", "def", "do", "case", "class", "if", "elsif", "else",
+    "redo", "retry", "return", "self", "super", "when", "while", "yield", "or", "in"
+
+    "true|", "false|", "unless|", "undef|", "until|", "nil|", "module|", "defined?|",
+    "BEGIN|", "END|", "__FILE__|", "__LINE__|", "__ENCODING__|"
 };
 
 /* HLDB stands for HighLighting DataBase, and contains 
@@ -251,7 +260,15 @@ struct editorSyntax HLDB[] = {
     CSS_HL_keywords,
     "/**", "/*", "/*",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-  }
+  },
+  {
+    "Ruby",
+    RUBY_HL_extensions,
+    RUBY_HL_keywords,
+    "#", "=begin", "=end",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+
 };
 
 #define HLDB_ENTRIES (sizeof(HLDB) / sizeof(HLDB[0]))

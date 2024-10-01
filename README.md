@@ -75,5 +75,5 @@ to bad for that. No, this
 editor is meant to be like Nano, a simple command line editor! And, with that, enjoy!
 
     This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
-    Apache-2.0-license (For the modified parts of the source code), if you are confused about 
-    this, that is not my problem and you can probably read about it on the internet somewhere.
+    Apache-2.0-license (For the modified parts of the source code), please abide to each license
+    under the fitting circumstances.

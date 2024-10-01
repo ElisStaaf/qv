@@ -54,6 +54,8 @@ enum editorHighlight {
 
 /*** data ***/
 
+/* Need this to show syntax
+ * highlighting properly. */
 struct editorSyntax {
   char *filetype;
   char **filematch;
@@ -95,6 +97,7 @@ struct editorConfig E;
 
 /*** filetypes ***/
 
+/* The "full" syntax highlighting list */
 char *C_HL_extensions[] = { ".c", ".h", ".cpp", NULL };
 char *C_HL_keywords[] = {
   "switch", "if", "while", "for", "break", "continue", "return", "else",
@@ -183,6 +186,8 @@ char *CSS_HL_keywords[] = {
     "@font-face|"
 };
 
+/* HLDB stands for HighLighting DataBase, and contains 
+ * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
   {
     "C/C++",

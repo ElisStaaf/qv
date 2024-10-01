@@ -1,2 +1,2 @@
-qv: src/qv.c
-	$(CC) src/qv.c -o build/qv.o -Wall -Wextra -pedantic -std=c99
+kilo: src/qv.c
+	$(CC) src/qv.c -o build/qv -Wall -Wextra -pedantic -std=c99

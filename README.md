@@ -12,34 +12,17 @@ To install, simply:
 ```bash
 git clone --depth 1 https://github.com/ElisStaaf/qv ~/qv
 ```
-And then, you have two options: if you're on a system that supports `.sh` files, you're in luck!  
-  
-**Init via init.sh**
-```bash
-sh ~/qv/init.sh
-```
-This will check that everything is okay, and then will install a shortcut to run the executable.
-_But_, you can do everything, all on your own:  
-  
-**Init from scratch via linux shell-script**
-```bash
-echo "alias qv=\"~/qv/build/qv.exe\"" >> <config>
-```
+Then you want to initialize the editor via your shell, here is an
+informative table on what shells are supported (Note that you may
+need to change permissions for some of these):
 
-**Init from scratch via linux fish**
-```fish
-echo "function qv
-    ~/qv/build/qv.exe
-end
-" >> ~/.config/fish/config.fish
-```  
-  
-**Init from scratch via windows POWERSHELL**
-```pwsh
-"function qv {
-    ~/qv/build/qv.exe
-}" >> $env:USERPROFILE/Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-```
+| Shell      | File      | Init                                                                        |
+| -----      | ----      | ----                                                                        |
+| Sh         | init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
+| Powershell | init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
+| Fish       | init.fish | chmod +x ~/qv/init/init.fish;~/qv/init/init.fish                            |
+| Cmd.exe    | init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
+
 
 Get Started
 --------

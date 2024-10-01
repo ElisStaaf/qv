@@ -15,17 +15,25 @@ And then, you have two options: if you're on a system that supports `.sh` files,
   
 **Init via init.sh**
 ```bash
-bash ~/qv/init.sh
+sh ~/qv/init.sh
 ```
 This will check that everything is okay, and then will install a shortcut to run the executable.
 _But_, you can do everything, all on your own:  
   
-**Init from scratch via linux BASH**
+**Init from scratch via linux shell-script**
 ```bash
-echo "alias qv=\"~/qv/build/qv.exe\"" >> ~/.bashrc
+echo "alias qv=\"~/qv/build/qv.exe\"" >> <config>
+```
+
+**Init from scratch via linux fish**
+```fish
+echo "function qv
+    ~/qv/build/qv.exe
+end
+" >> ~/.config/fish/config.fish
 ```  
   
-**Init from scratch via windows**
+**Init from scratch via windows POWERSHELL**
 ```pwsh
 "function qv {
     ~/qv/build/qv.exe

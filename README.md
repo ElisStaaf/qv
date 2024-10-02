@@ -84,7 +84,7 @@ Great! It started up! I'm writing a simple Hello World app, so i can just write 
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/helloworld.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/helloworld.png)
 As you can see, the syntax highlighting kicked in right away! Now, i save my app with `Ctrl+S`, then quit with `Ctrl+Q`. Then i can run the
 file with my preferred compiler and i will be done with my task. Now what if i'm managing a huge codebase? How am i supposed to find the invalid 
-reference of variable &HLDB[]? Well, you can find everything with `Ctrl+F`. I press Ctrl+F and i search with the arrow keys! Then i realize that &HLDB[]
+reference of variable &HLDB[]? Well, you can find everything with `Ctrl+F`. I press `Ctrl+F` input my text and search with the arrow keys! Then i realize that &HLDB[]
 never existed and i was just crazy. And that's the tutorial!
 
 Oh, and before you go, this text editor is not meant to be anyones main editor, it's way

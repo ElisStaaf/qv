@@ -195,6 +195,14 @@ char *RUBY_HL_keywords[] = {
     "BEGIN|", "END|", "__FILE__|", "__LINE__|", "__ENCODING__|"
 };
 
+char *D_HL_extensions[] = { ".d", NULL };
+char *D_HL_keywords[] = {
+    "module", "extern", "public", "private", "import", "char", "int", "enum", "alias",
+    "ubyte", "string", "static", "void", "long", "while", "if", "switch", "case" "return",
+
+    "true|", "false|", "null|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -268,7 +276,13 @@ struct editorSyntax HLDB[] = {
     "#", "=begin", "=end",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
-
+  {
+    "D",
+    D_HL_extensions,
+    D_HL_keywords,
+    "//", "/+", "/+",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
 };
 
 #define HLDB_ENTRIES (sizeof(HLDB) / sizeof(HLDB[0]))

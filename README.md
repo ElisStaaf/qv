@@ -69,7 +69,8 @@ Currently, QV includes syntax highlighting for the following languages:
 -  Rust
 -  CSS
 -  Ruby
-  
+-  D
+
 But you can ofcourse modify the source-code to add more! I shall for this tutorial
 use the "C" programming language.
 ```bash

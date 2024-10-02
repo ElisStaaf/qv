@@ -44,12 +44,12 @@ Then you want to initialize the editor via your shell, here is an
 informative table on what shells are supported (Note that you may
 need to change permissions for some of these):
 
-| Shell       | File      | Init                                                                        |
-| -----       | ----      | ----                                                                        |
-| Sh/Bash/Zsh | init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
-| Powershell  | init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
-| Fish        | init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
-| Cmd.exe     | init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
+| Shell       | File           | Init                                                                        |
+| -----       | ----           | ----                                                                        |
+| Sh/Bash/Zsh | init/init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
+| Powershell  | init/init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
+| Fish        | init/init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
+| Cmd.exe     | init/init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
 
 Project layout
 --------

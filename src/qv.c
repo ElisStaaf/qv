@@ -294,14 +294,14 @@ struct editorSyntax HLDB[] = {
     "D",
     D_HL_extensions,
     D_HL_keywords, 
-    "//", "/+", "/+",
+    "//", "/+", "+/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {
     "SQL",
     SQL_HL_extensions,
     SQL_HL_keywords, 
-    "--", "/*", "/*",
+    "--", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {

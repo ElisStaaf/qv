@@ -1,5 +1,3 @@
-    NOTE: This program is under refactoring at the moment,
-    it may be dangerous to install at this time.
 # QV
 [![Build](https://img.shields.io/badge/build_(openSUSE)-Passing-brightgreen?logo=opensuse)](https://github.com/ElisStaaf/qv) 
 [![Version](https://img.shields.io/badge/Version-1.0.3-darkblue)](https://github.com/ElisStaaf/qv)

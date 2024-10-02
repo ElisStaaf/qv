@@ -70,6 +70,7 @@ Currently, QV includes syntax highlighting for the following languages:
 -  CSS
 -  Ruby
 -  D
+-  SQL
 -  Lua
 
 But you can ofcourse modify the source-code to add more! I shall for this tutorial

@@ -203,6 +203,20 @@ char *D_HL_keywords[] = {
     "true|", "false|", "null|"
 };
 
+char *SQL_HL_extensions[] = { ".sql", NULL };
+char *SQL_HL_keywords[] = {
+    "ADD", "ADD CONSTRAINT", "ALL", "ALTER", "COLUMN", "JOIN", "TABLE", "SELECT", "UNION",
+    "PROCEDURE", "OR", "ORDER BY", "ROWNUM", "IS", "IN", "NULL", "EXEC", "DROP", "FROM"
+};
+
+char *LUA_HL_extensions[] = { ".lua", NULL };
+char *LUA_HL_keywords[] = {
+    "and", "or", "if", "else", "do", "while", "function", "end", "not", "return", "until",
+    "repeat", "in", "for", "then", "break", "elseif",
+
+    "local|", "true|", "false|", "nil|"
+}
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -279,8 +293,21 @@ struct editorSyntax HLDB[] = {
   {
     "D",
     D_HL_extensions,
-    D_HL_keywords,
+    D_HL_keywords, 
     "//", "/+", "/+",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "SQL",
+    SQL_HL_extensions,
+    SQL_HL_keywords, 
+    "--", "/*", "/*",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Lua",
+    LUA_HL_extensions,
+    LUA_HL_keywords, "--", "--[[", "]]",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

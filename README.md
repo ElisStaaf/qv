@@ -3,8 +3,8 @@
 [![Version](https://img.shields.io/badge/Version-1.0.3-darkblue)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
 QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the [kilo](https://github.com/snaptoken/kilo-src) 
-editor, with a _lot_ of improvements! For
-example: better syntax highlighting! Cool, right?
+editor, with a _lot_ of improvements! Forexample: better syntax highlighting! It also runs 
+on the C standard library so that's good!
 
 Requirements
 -------
@@ -51,6 +51,24 @@ need to change permissions for some of these):
 | Fish        | init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
 | Cmd.exe     | init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
 
+Project layout
+--------
+```
+├── helloworld.png   Picture for README
+├── init/            Initializer files
+│   ├── init.bat     Init for Cmd.exe
+│   ├── init.fish    Init for fish
+│   ├── init.ps1     Init for PowerShell
+│   └── init.sh      Init for Sh/Bash/Zsh
+├── LICENSE.APACHE   Apache license for the "qv" source code
+├── LICENSE.BSD      BSD license for the "kilo" source code
+├── Makefile         Makefile for config
+├── README.md        README for info
+├── src/             Source code
+│   └── qv.c         Source file
+├── startup.png      Picture for README
+└── TODO.md          Todo list
+```
 
 Get Started
 --------

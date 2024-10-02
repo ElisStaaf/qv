@@ -215,7 +215,7 @@ char *LUA_HL_keywords[] = {
     "repeat", "in", "for", "then", "break", "elseif",
 
     "local|", "true|", "false|", "nil|"
-}
+};
 
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */

@@ -105,7 +105,7 @@ char *C_HL_keywords[] = {
   "#define", "#include"
 
   "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-  "void|", "true|", "false|", NULL
+  "void|", "true|", "false|", "NULL|"
 };
 
 char *SH_HL_extensions[] = { ".sh", NULL };
@@ -217,6 +217,22 @@ char *LUA_HL_keywords[] = {
     "local|", "true|", "false|", "nil|"
 };
 
+char *PWSH_HL_extensions[] = { ".ps1", NULL};
+char *PWSH_HL_keywords[] = {
+    "Write-Host", "Write-Output", "Clear-Host", "function", "if", "else", "try", "catch",
+    "throw", "elseif", "echo", "cls", "dir", "ls", "cd",
+
+    "$true|", "$false|", "$null|"
+};
+
+char *BAT_HL_extensions[] = { ".bat", NULL};
+char *BAT_HL_keywords[] = {
+    "@ECHO", "ECHO", "OFF", "SET", "PING", "CD", "CURL", "IF", "ELSE", "FIND" "COPY", "CURL", 
+    "ON", "EXIT", "LS", "CLS", "PAUSE", "TITLE", "REM", "IPCONFIG", "TRACERT"
+
+    ">>|", "+|", "-|", "*|", "/|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -307,7 +323,22 @@ struct editorSyntax HLDB[] = {
   {
     "Lua",
     LUA_HL_extensions,
-    LUA_HL_keywords, "--", "--[[", "]]",
+    LUA_HL_keywords, 
+    "--", "--[[", "]]",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Powershell",
+    PWSH_HL_extensions,
+    PWSH_HL_keywords, 
+    "#", "<#", "#>",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Batch",
+    BAT_HL_extensions,
+    BAT_HL_keywords, 
+    "::", "goto comment", ":comment",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

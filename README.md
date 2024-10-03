@@ -30,13 +30,13 @@ To install, you can use this handy table to find out what to do:
 
 After this, you'd want to use "make" to initialize an executable:
 ```bash
-cd ~/qv
-make
+$ cd ~/qv
+$ make
 ```
 If you don't have make installed on your system; you can use GCC:
 ```bash
-cd ~/qv
-gcc -o qv src/qv.c
+$ cd ~/qv
+$ gcc -o qv src/qv.c
 ```
 You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
 and a copy of make [*here*](https://www.gnu.org/software/make/).
@@ -74,7 +74,7 @@ Get Started
 --------
 To get started, just open a file via QV!
 ```bash
-qv <filename>
+$ qv <filename>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
 -  C/C++
@@ -96,8 +96,8 @@ Currently, QV includes syntax highlighting for the following languages:
 But you can ofcourse modify the source-code to add more! I shall for this tutorial
 use the "C" programming language.
 ```bash
-touch "main.c" # Create file
-qv "main.c" # Open file
+$ touch "main.c" # Create file
+$ qv "main.c" # Open file
 ```
 I am greeted to this interface:
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/startup.png)
@@ -110,6 +110,25 @@ never existed and i was just crazy. And that's the tutorial!
 
 Oh, and before you go, this text editor is not meant to be anyones main editor, it's way
 to bad for that. No, this editor is meant to be like Nano, a simple command line editor! And, with that, enjoy!
+
+Config
+------
+New feature! Config! With a config file you can change some settings (tab_stop, quit_times etc...).
+Heres a basic little tutorial for a config.  
+  
+To start, you'd want to create a config file:
+```bash
+$ touch config.qv # Name it anything you want, but im naming it "config.qv".
+```
+Qv provides a simple configuration language called... Let's say QvScript. To get all
+of the different options for configuration, you have to look inside the source which is `~/qv/src/qv.c`.
+But im going to just set some simple options.
+```
+tab_stop=4
+quit_times=2
+```
+tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
+modifying a file. Yeah, cool.
 
     This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
     Apache-2.0-license (For the modified parts of the source code), please abide to each license

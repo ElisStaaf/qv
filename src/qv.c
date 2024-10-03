@@ -91,6 +91,8 @@ struct editorConfig {
   time_t statusmsg_time;
   struct editorSyntax *syntax;
   struct termios orig_termios;
+  int tab_stop;      // Changed from #define to a variable
+  int quit_times;    // Changed from #define to a variable
 };
 
 struct editorConfig E;
@@ -1260,38 +1262,78 @@ void editorProcessKeypress() {
 
 /*** init ***/
 
-void initEditor() {
-  E.cx = 0;
-  E.cy = 0;
-  E.rx = 0;
-  E.rowoff = 0;
-  E.coloff = 0;
-  E.numrows = 0;
-  E.row = NULL;
-  E.dirty = 0;
-  E.filename = NULL;
-  E.statusmsg[0] = '\0';
-  E.statusmsg_time = 0;
-  E.syntax = NULL;
+void load_config(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        perror("Configuration file could not be opened");
+        return;
+    }
 
-  if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
-  E.screenrows -= 2;
+    char line[256];
+    while (fgets(line, sizeof(line), file)) {
+        char *equals = strchr(line, '=');
+        if (equals) {
+            *equals = '\0'; // Null-terminate at '=' to split key
+            char *key = line;
+            char *value = equals + 1;
+
+            // Remove any whitespace
+            key[strcspn(key, "\r\n")] = 0; // remove trailing newline
+            value[strcspn(value, "\r\n")] = 0; // remove trailing newline
+
+            if (strcmp(key, "tab_stop") == 0) {
+                E.tab_stop = atoi(value);
+            } else if (strcmp(key, "quit_times") == 0) {
+                E.quit_times = atoi(value);
+            }
+        }
+    }
+
+    fclose(file);
+}
+
+// Initialize the editor configuration
+void initEditor() {
+    E.cx = 0;
+    E.cy = 0;
+    E.rx = 0;
+    E.rowoff = 0;
+    E.coloff = 0;
+    E.numrows = 0;
+    E.row = NULL;
+    E.dirty = 0;
+    E.filename = NULL;
+    E.statusmsg[0] = '\0';
+    E.statusmsg_time = 0;
+    E.syntax = NULL;
+
+    // Set default values
+    E.tab_stop = 8;  // Default tab stop
+    E.quit_times = 3; // Default quit times
+
+    if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
+    E.screenrows -= 2;
 }
 
 int main(int argc, char *argv[]) {
-  enableRawMode();
-  initEditor();
-  if (argc >= 2) {
-    editorOpen(argv[1]);
-  }
+    enableRawMode();
+    initEditor();
 
-  editorSetStatusMessage(
-    "HELP: Ctrl-S = save | Ctrl-Q = quit | Ctrl-F = find");
+    // Load configuration if the file is provided
+    if (argc >= 3) {
+        load_config(argv[2]);
+    } else if (argc >= 2) {
+        editorOpen(argv[1]);
+    }
 
-  while (1) {
-    editorRefreshScreen();
-    editorProcessKeypress();
-  }
+    editorSetStatusMessage(
+        "HELP: Ctrl-S = save | Ctrl-Q = quit | Ctrl-F = find");
 
-  return 0;
+    while (1) {
+        editorRefreshScreen();
+        editorProcessKeypress();
+    }
+
+    return 0;
 }
+

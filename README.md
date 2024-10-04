@@ -33,7 +33,7 @@ After this, you'd want to use "make" to initialize an executable:
 $ cd ~/qv
 $ make
 ```
-If you don't have make installed on your system; you can use GCC:
+If you don't have make installed on your system; you can use GCC (or any other C compiler):
 ```bash
 $ cd ~/qv
 $ gcc -o qv src/qv.c
@@ -92,6 +92,7 @@ Currently, QV includes syntax highlighting for the following languages:
 -  Lua
 -  Powershell
 -  Batch
+-  GDScript
 
 But you can ofcourse modify the source-code to add more! I shall for this tutorial
 use the "C" programming language.
@@ -128,7 +129,7 @@ tab_stop=4
 quit_times=2
 ```
 tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
-modifying a file. Yeah, cool.
+modifying a file. Yeah, cool. Enjoy the project!
 
     This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
     Apache-2.0-license (For the modified parts of the source code), please abide to each license

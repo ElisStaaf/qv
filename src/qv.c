@@ -100,7 +100,7 @@ struct editorConfig E;
 /*** filetypes ***/
 
 /* The "full" syntax highlighting list */
-char *C_HL_extensions[] = { ".c", ".h", ".cpp", NULL };
+char *C_HL_extensions[] = { ".c", ".h", ".cpp" };
 char *C_HL_keywords[] = {
   "switch", "if", "while", "for", "break", "continue", "return", "else",
   "struct", "union", "typedef", "static", "enum", "class", "case",
@@ -110,7 +110,7 @@ char *C_HL_keywords[] = {
   "void|", "true|", "false|", "NULL|"
 };
 
-char *SH_HL_extensions[] = { ".sh", NULL };
+char *SH_HL_extensions[] = { ".sh" };
 char *SH_HL_keywords[] = {
     "case", "esac", "if", "fi", "elif", "else", "then", "echo", "alias",
     "expr", "for", "in", "function", "return", "done", "grep", "find",
@@ -118,7 +118,7 @@ char *SH_HL_keywords[] = {
     "local|", "export|", "set|", "true|", "false|"
 };
 
-char *GO_HL_extensions[] = { ".go", NULL };
+char *GO_HL_extensions[] = { ".go" };
 char *GO_HL_keywords[] = {
     "switch", "case", "if", "else", "go", "package", "import",
     "return", "func", "for", "default", "goto", "fallthrough", "interface",
@@ -129,7 +129,7 @@ char *GO_HL_keywords[] = {
     "clear|", "panic|", "println|", "complex|", "new|"
 };
 
-char *PY_HL_extensions[] = { ".py", "pyi", NULL };
+char *PY_HL_extensions[] = { ".py", "pyi" };
 char *PY_HL_keywords[] = {
     "match", "case", "if", "else", "elif", "import", "print", "range",
     "in", "for", "while", "map", "zip", "from", "class", "def", "lambda",
@@ -140,7 +140,7 @@ char *PY_HL_keywords[] = {
     "break|", "raise|", "exec|", "eval|", "len|", "super|", "__import__|"
 };
 
-char *JS_HL_extensions[] = { ".js", ".ts", NULL };
+char *JS_HL_extensions[] = { ".js", ".ts" };
 char *JS_HL_keywords[] = {
     "function", "if", "else", "eval", "goto", "try", "catch", "finally",
     "import", "for", "int", "number", "string", "this", "void", "yield",
@@ -150,7 +150,7 @@ char *JS_HL_keywords[] = {
     "class|", "export|", "extends|", "switch|", "case|", "new|"
 };
 
-char *CS_HL_extensions[] = { ".cs", NULL };
+char *CS_HL_extensions[] = { ".cs" };
 char *CS_HL_keywords[] = {
     "namespace", "class", "if", "do", "else", "int", "string", "void", "return",
     "is", "in", "interface", "stackalloc", "double", "while", "char", "float"
@@ -159,7 +159,7 @@ char *CS_HL_keywords[] = {
     "internal|", "enum|", "as|", "using|", "default|", "event|"
 };
 
-char *HTML_HL_extensions[] = { ".htm", ".html", NULL };
+char *HTML_HL_extensions[] = { ".htm", ".html" };
 char *HTML_HL_keywords[] = {
     "<html>", "</html>", "<head>", "</head>", "<body>", "</body>", "<link>", 
     "<meta>", "<title>", "</title>", "<script>", "</script>",
@@ -169,7 +169,7 @@ char *HTML_HL_keywords[] = {
     "</style>|"
 };
 
-char *RUST_HL_extensions[] = { ".rs", ".rlib", NULL };
+char *RUST_HL_extensions[] = { ".rs", ".rlib" };
 char *RUST_HL_keywords[] = {
     "fn", "for", "if", "where", "while", "struct", "static", "str", "char", "!",
     "u8", "u16", "u32", "u64", "u128", "i8", "i16", "i32", "i64", "i128", "loop",
@@ -179,7 +179,7 @@ char *RUST_HL_keywords[] = {
     "false|", "type|", "typeof|", "yield", "try|", "union|", "dyn|"
 };
 
-char *CSS_HL_extensions[] = { ".css", NULL };
+char *CSS_HL_extensions[] = { ".css" };
 char *CSS_HL_keywords[] = {
     "color", "backround-color", "transition-duration", "calc", "all", "content", "padding",
     "quotes", "border", "z-index",
@@ -188,7 +188,7 @@ char *CSS_HL_keywords[] = {
     "@font-face|"
 };
 
-char *RUBY_HL_extensions[] = { ".rb" ".erb", NULL };
+char *RUBY_HL_extensions[] = { ".rb" ".erb" };
 char *RUBY_HL_keywords[] = {
     "alias", "and", "begin", "end", "def", "do", "case", "class", "if", "elsif", "else",
     "redo", "retry", "return", "self", "super", "when", "while", "yield", "or", "in"
@@ -197,21 +197,21 @@ char *RUBY_HL_keywords[] = {
     "BEGIN|", "END|", "__FILE__|", "__LINE__|", "__ENCODING__|"
 };
 
-char *D_HL_extensions[] = { ".d", NULL };
+char *D_HL_extensions[] = { ".d" };
 char *D_HL_keywords[] = {
     "module", "extern", "public", "private", "import", "char", "int", "enum", "alias",
     "ubyte", "string", "static", "void", "long", "while", "if", "switch", "case" "return",
 
-    "true|", "false|", "null|"
+    "true|", "false|", "null|" 
 };
 
-char *SQL_HL_extensions[] = { ".sql", NULL };
+char *SQL_HL_extensions[] = { ".sql" };
 char *SQL_HL_keywords[] = {
     "ADD", "ADD CONSTRAINT", "ALL", "ALTER", "COLUMN", "JOIN", "TABLE", "SELECT", "UNION",
     "PROCEDURE", "OR", "ORDER BY", "ROWNUM", "IS", "IN", "NULL", "EXEC", "DROP", "FROM"
 };
 
-char *LUA_HL_extensions[] = { ".lua", NULL };
+char *LUA_HL_extensions[] = { ".lua" };
 char *LUA_HL_keywords[] = {
     "and", "or", "if", "else", "do", "while", "function", "end", "not", "return", "until",
     "repeat", "in", "for", "then", "break", "elseif",
@@ -219,7 +219,7 @@ char *LUA_HL_keywords[] = {
     "local|", "true|", "false|", "nil|"
 };
 
-char *PWSH_HL_extensions[] = { ".ps1", NULL};
+char *PWSH_HL_extensions[] = { ".ps1" };
 char *PWSH_HL_keywords[] = {
     "Write-Host", "Write-Output", "Clear-Host", "function", "if", "else", "try", "catch",
     "throw", "elseif", "echo", "cls", "dir", "ls", "cd",
@@ -227,12 +227,21 @@ char *PWSH_HL_keywords[] = {
     "$true|", "$false|", "$null|"
 };
 
-char *BAT_HL_extensions[] = { ".bat", NULL};
+char *BAT_HL_extensions[] = { ".bat" };
 char *BAT_HL_keywords[] = {
     "@ECHO", "ECHO", "OFF", "SET", "PING", "CD", "CURL", "IF", "ELSE", "FIND" "COPY", "CURL", 
-    "ON", "EXIT", "LS", "CLS", "PAUSE", "TITLE", "REM", "IPCONFIG", "TRACERT"
+    "ON", "EXIT", "LS", "CLS", "PAUSE", "TITLE", "REM", "IPCONFIG", "TRACERT",
 
     ">>|", "+|", "-|", "*|", "/|"
+};
+
+char *GD_HL_extensions[] = { ".gd" };
+char *GD_HL_keywords[] = {
+    "func", "var", "const", "class_name", "extends", "if", "elif", "else", "match", "return",
+    "super", "print", "class", "class", "pass", "static", "enum", "breakpoint", "self", "is",
+    "in", "as", "signal", "preload", "await", "yield", "void", "or",
+
+    "@export|", "@icon|", "true|", "false|", "null|"
 };
 
 /* HLDB stands for HighLighting DataBase, and contains 
@@ -341,6 +350,13 @@ struct editorSyntax HLDB[] = {
     BAT_HL_extensions,
     BAT_HL_keywords, 
     "::", "goto comment", ":comment",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "GDScript",
+    GD_HL_extensions,
+    GD_HL_keywords, 
+    "#", "\"\"\"", "\"\"\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

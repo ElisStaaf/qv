@@ -8,7 +8,8 @@ on the C standard library so that's good!
 
 Requirements
 -------
-- Either make or gcc
+- C compiler (clang, gcc etc.)
+- Make (optional)
 - Git or Github CLI (optional)
 - One of the following shells:
   - Sh

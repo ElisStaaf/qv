@@ -1,2 +1,0 @@
-:qv
-    %USERPROFILE%/qv/qv

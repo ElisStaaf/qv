@@ -244,6 +244,16 @@ char *GD_HL_keywords[] = {
     "@export|", "@icon|", "true|", "false|", "null|"
 };
 
+char *JAVA_HL_extensions[] = { ".java", NULL };
+char *JAVA_HL_keywords[] = {
+    "abstract", "continue", "for", "new", "switch" "assert", "default", "goto" "package", 
+    "synchronized", "boolean", "do", "if", "private", "this", "break", "double", "implements",	
+    "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum",
+    "return", "while",
+
+    "true|", "false|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -357,6 +367,13 @@ struct editorSyntax HLDB[] = {
     GD_HL_extensions,
     GD_HL_keywords, 
     "#", "\"\"\"", "\"\"\"",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Java",
+    JAVA_HL_extensions,
+    JAVA_HL_keywords, 
+    "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

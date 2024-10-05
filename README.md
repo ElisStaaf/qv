@@ -31,13 +31,13 @@ To install, you can use this handy table to find out what to do:
 
 After this, you'd want to use "make" to initialize an executable:
 ```bash
-$ cd ~/qv
-$ make
+cd ~/qv
+make
 ```
 If you don't have make installed on your system; you can use GCC (or any other C compiler):
 ```bash
-$ cd ~/qv
-$ gcc -o qv src/qv.c
+cd ~/qv
+gcc -o qv src/qv.c
 ```
 You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
 and a copy of make [*here*](https://www.gnu.org/software/make/).
@@ -71,7 +71,7 @@ Get Started
 --------
 To get started, just open a file via QV!
 ```bash
-$ qv <filename>
+qv <filename>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
 -  C/C++
@@ -94,8 +94,8 @@ Currently, QV includes syntax highlighting for the following languages:
 But you can ofcourse modify the source-code to add more! I shall for this tutorial
 use the "C" programming language.
 ```bash
-$ touch "main.c" # Create file
-$ qv "main.c" # Open file
+touch "main.c" # Create file
+qv "main.c" # Open file
 ```
 I am greeted to this interface:
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/startup.png)
@@ -116,7 +116,7 @@ Heres a basic little tutorial for a config.
   
 To start, you'd want to create a config file:
 ```bash
-$ touch config.qv # Name it anything you want, but im naming it "config.qv".
+touch config.qv # Name it anything you want, but im naming it "config.qv".
 ```
 Qv provides a simple configuration language called... Let's say QvScript. To get all
 of the different options for configuration, you have to look inside the source which is `~/qv/src/qv.c`.

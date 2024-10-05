@@ -56,11 +56,7 @@ Project layout
 --------
 ```
 ├── helloworld.png   Picture for README
-├── init/            Initializer files
-│   ├── init.bat     Init for Cmd.exe
-│   ├── init.fish    Init for fish
-│   ├── init.ps1     Init for PowerShell
-│   └── init.sh      Init for Sh/Bash/Zsh
+├── install.sh       Initializer
 ├── LICENSE.APACHE   Apache license for the "qv" source code
 ├── LICENSE.BSD      BSD license for the "kilo" source code
 ├── Makefile         Makefile for config

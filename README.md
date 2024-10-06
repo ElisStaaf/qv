@@ -113,7 +113,11 @@ tab_stop=4
 quit_times=2
 ```
 tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
-modifying a file. Yeah, cool. Enjoy the project!
+modifying a file. To run with a config file, simply:
+```bash
+./qv <filename> <config>
+```
+Yeah, cool. Enjoy the project!
 
     This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
     Apache-2.0-license (For the modified parts of the source code), please abide to each license

@@ -176,7 +176,7 @@ char *RUST_HL_keywords[] = {
     "crate", "continue", "break", "as", "ref", "Self", "in", "do", "final", "priv",
 
     "let|", "mut|", "pub|", "const|", "return|", "self|", "async|", "await|", "true|",
-    "false|", "type|", "typeof|", "yield", "try|", "union|", "dyn|"
+    "false|", "type|", "typeof|", "yield|", "try|", "union|", "dyn|"
 };
 
 char *CSS_HL_extensions[] = { ".css", NULL };
@@ -252,6 +252,17 @@ char *JAVA_HL_keywords[] = {
     "return", "while",
 
     "true|", "false|"
+};
+
+char *PHP_HL_extensions[] = { ".php", NULL };
+char *PHP_HL_keywords[] = {
+    "__halt_compiler|", "abstract", "and", "array", "as", "break", "callable", "case", "catch", "class", "clone", "const", 
+    "continue", "declare", "default", "die", "do", "echo", "else", "elseif", "empty", "enddeclare", "endfor", "endforeach", 
+    "endif", "endswitch", "endwhile", "eval", "exit", "extends", "final", "for", "foreach", "function", "global", "goto", "if",
+    "implements", "include", "include_once", "instanceof", "insteadof", "interface", "isset", "list", "namespace", "new", "or",
+    "print", "private", "protected", "public", "require", "require_once", "return", "static", "switch", "throw", "trait", "try",
+    "unset", "use", "var", "while", "xor" 
+    /* Thank you Chris from https://www.php.net/manual/en/reserved.keywords.php, you made my life so much easier! */
 };
 
 /* HLDB stands for HighLighting DataBase, and contains 
@@ -374,6 +385,13 @@ struct editorSyntax HLDB[] = {
     JAVA_HL_extensions,
     JAVA_HL_keywords, 
     "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "PHP",
+    PHP_HL_extensions,
+    PHP_HL_keywords, 
+    "#", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };
@@ -1360,7 +1378,7 @@ int main(int argc, char *argv[]) {
     }
 
     editorSetStatusMessage(
-        "HELP: Ctrl-S = save | Ctrl-Q = quit | Ctrl-F = find");
+        "HELP: Ctrl-S = Save | Ctrl-Q = Quit | Ctrl-F = Find");
 
     while (1) {
         editorRefreshScreen();

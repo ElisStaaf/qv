@@ -11,14 +11,7 @@ Requirements
 - C compiler (clang, gcc etc.)
 - Make (optional)
 - Git or Github CLI (optional)
-- One of the following shells:
-  - Sh
-  - Bash
-  - Zsh
-  - Fish
-  - PowerShell
-  - Cmd.exe
-
+- 
 Install
 -------
 To install, you can use this handy table to find out what to do:
@@ -41,16 +34,8 @@ gcc -o qv src/qv.c
 ```
 You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
 and a copy of make [*here*](https://www.gnu.org/software/make/).
-Then you want to initialize the editor via your shell, here is an
-informative table on what shells are supported (Note that you may
-need to change permissions for some of these):
-
-| Shell       | File           | Init                                                                        |
-| -----       | ----           | ----                                                                        |
-| Sh/Bash/Zsh | init/init.sh   | chmod +x ~/qv/init/init.sh; sh ~/qv/init/init.sh                            |
-| Powershell  | init/init.ps1  | PowerShell $env:USERPROFILE/qv/init.ps1                                     |
-| Fish        | init/init.fish | chmod +x ~/qv/init/init.fish; ~/qv/init/init.fish                           |
-| Cmd.exe     | init/init.bat  | mklink %windir%/Cmd.exe /K %USERPROFILE%/qv/init/init.bat %USERPROFILE%/Cmd |
+Then you want to initialize the editor via your shell, with install.sh. OR you can
+just build via $(CC), it's fine either way.
 
 Project layout
 --------

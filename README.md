@@ -11,7 +11,7 @@ Requirements
 - C compiler (clang, gcc etc.)
 - Make (optional)
 - Git or Github CLI (optional)
-- 
+
 Install
 -------
 To install, you can use this handy table to find out what to do:
@@ -34,7 +34,7 @@ gcc -o qv src/qv.c
 ```
 You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
 and a copy of make [*here*](https://www.gnu.org/software/make/).
-Then you want to initialize the editor via your shell, with install.sh. OR you can
+Then you want to initialize the editor via your shell, with the `install.sh` script, OR you can
 just build via $(CC), it's fine either way.
 
 Project layout

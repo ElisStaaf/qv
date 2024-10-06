@@ -1,3 +1,3 @@
 SHELL=sh
-kilo: src/qv.c
+qv: src/qv.c
 	$(CC) src/qv.c -o qv -Wall -Wextra -pedantic -std=c99

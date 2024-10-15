@@ -14,13 +14,17 @@ Requirements
 
 Install
 -------
-To install, you can use this handy table to find out what to do:
+To install, you can:
+```bash
+# Git
+git clone https://github.com/ElisStaaf/qv ~/qv
 
-| Application | Command                                                                                                                  |
-| ----------- | -------                                                                                                                  |
-| Git         | git clone https://github.com/ElisStaaf/qv ~/qv                                                                           |
-| Github CLI  | gh repo clone ElisStaaf/qv ~/qv                                                                                          |
-| cURL        | curl -s https://github.com/ElisStaaf/qv/{src/qv.c,init/init.sh,init/init.ps1,init/init.bat,init/init.fish,Makefile} ~/qv |
+# Gh
+gh repo clone ElisStaaf/qv ~/qv
+
+# cURL
+curl -s https://github.com/ElisStaaf/qv/{src/qv.c,init/init.sh,init/init.ps1,init/init.bat,init/init.fish,Makefile} ~/qv
+```
 
 After this, you'd want to use "make" to initialize an executable:
 ```bash
@@ -46,7 +50,7 @@ Project layout
 ├── src/             Source code
 │   └── qv.c         Source file
 ├── startup.png      Picture for README
-└── TODO.md          Todo list
+└── TODO             Todo list
 ```
 
 Get Started
@@ -75,7 +79,7 @@ Currently, QV includes syntax highlighting for the following languages:
 -  Java
 -  PHP
 
-But you can ofcourse modify the source-code to add more! I shall for this tutorial
+But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.
 ```bash
 touch "main.c" # Create file
@@ -112,7 +116,7 @@ quit_times=2
 tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
 modifying a file. To run with a config file, simply:
 ```bash
-./qv <filename> <config>
+qv <filename> <config>
 ```
 Yeah, cool. Enjoy the project!
 

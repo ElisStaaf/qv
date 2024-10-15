@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/Version-1.1.0-darkblue)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
 QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the [kilo](https://github.com/snaptoken/kilo-src) 
-editor, with a _lot_ of improvements! Forexample: better syntax highlighting! It also runs 
+editor, with a _lot_ of improvements! For example: better syntax highlighting! It also runs 
 on the C standard library so that's good!
 
 Requirements

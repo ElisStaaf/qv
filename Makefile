@@ -1,3 +1,6 @@
 SHELL=sh
-qv: src/qv.c
-	$(CC) src/qv.c -o qv -Wall -Wextra -pedantic -std=c99
+SOURCE="src/qv.c"
+BINARY="/usr/bin/qv"
+
+install:
+	$(CC) ${SOURCE} -o ${BINARY} -Wall -Wextra -pedantic -std=c99

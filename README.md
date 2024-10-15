@@ -25,7 +25,7 @@ To install, you can use this handy table to find out what to do:
 After this, you'd want to use "make" to initialize an executable:
 ```bash
 cd ~/qv
-make
+sudo make install
 ```
 If you don't have make installed on your system; you can use GCC (or any other C compiler):
 ```bash
@@ -34,14 +34,11 @@ gcc -o qv src/qv.c
 ```
 You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
 and a copy of make [*here*](https://www.gnu.org/software/make/).
-Then you want to initialize the editor via your shell, with the `install.sh` script, OR you can
-just build via $(CC), it's fine either way.
 
 Project layout
 --------
 ```
 ├── helloworld.png   Picture for README
-├── install.sh       Initializer
 ├── LICENSE.APACHE   Apache license for the "qv" source code
 ├── LICENSE.BSD      BSD license for the "kilo" source code
 ├── Makefile         Makefile for config

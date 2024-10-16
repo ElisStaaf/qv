@@ -1,16 +1,16 @@
 # QV
-[![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/soup)
+[![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/qv)
 [![Version](https://img.shields.io/badge/Version-1.1.0-darkblue)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
-QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the [kilo](https://github.com/snaptoken/kilo-src) 
+QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the kilo <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)>
 editor, with a _lot_ of improvements! For example: better syntax highlighting! It also runs 
 on the C standard library so that's good!
 
 Requirements
 -------
-- C compiler (clang, gcc etc.)
-- Make (optional)
-- Git or Github CLI (optional)
+- C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
+- Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
+- Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
 
 Install
 -------
@@ -31,13 +31,6 @@ After this, you'd want to use "make" to initialize an executable:
 cd ~/qv
 sudo make install
 ```
-If you don't have make installed on your system; you can use GCC (or any other C compiler):
-```bash
-cd ~/qv
-gcc -o qv src/qv.c
-```
-You can grab yourself a copy of gcc [*here*](https://sourceforge.net/projects/mingw-w64/), 
-and a copy of make [*here*](https://www.gnu.org/software/make/).
 
 Project layout
 --------

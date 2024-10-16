@@ -43,8 +43,7 @@ Project layout
 --------
 ```
 ├── helloworld.png   Picture for README
-├── LICENSE.APACHE   Apache license for the "qv" source code
-├── LICENSE.BSD      BSD license for the "kilo" source code
+├── LICENSE          License for source
 ├── Makefile         Makefile for config
 ├── README.md        README for info
 ├── src/             Source code

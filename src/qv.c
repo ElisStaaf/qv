@@ -265,6 +265,15 @@ char *PHP_HL_keywords[] = {
     /* Thank you Chris from https://www.php.net/manual/en/reserved.keywords.php, you made my life so much easier! */
 };
 
+char *VIM_HL_extensions[] = { ".vim", NULL };
+char *VIM_HL_keywords[] = {
+    "function!", "let", "if", "else", "return", "endif", "endfunction", "echo", "len", "strlen",
+    "strchars", "split", "join", "tolower", "toupper", "abort", "echon", "for", "in", "continue",
+    "break", "endfor", "while", "endwhile", "command!", "empty", "sort", "copy",
+
+    "=|", "=~|", "!=|", "!~|", "&&|", "|||"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -392,6 +401,13 @@ struct editorSyntax HLDB[] = {
     PHP_HL_extensions,
     PHP_HL_keywords, 
     "#", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Vim Script",
+    PHP_HL_extensions,
+    PHP_HL_keywords, 
+    "\"", "\"\"", "\"\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

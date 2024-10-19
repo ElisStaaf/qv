@@ -274,6 +274,15 @@ char *VIM_HL_keywords[] = {
     "=|", "=~|", "!=|", "!~|", "&&|", "|||"
 };
 
+char *KOTL_HL_extensions[] = { "kt", "kts", "ktm", NULL };
+char *KOTL_HL_keywords[] = {
+    "as", "break", "class", "continue", "do", "else", "for", "fun", "if", "in", "interface", "is",
+    "object", "package", "super", "throw", "try", "typealias", "typeof", "val", "var", "when",
+    "while", "public", "override", "private", "field",
+
+    "false|", "true|", "null|", "return|", "this|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -408,6 +417,13 @@ struct editorSyntax HLDB[] = {
     PHP_HL_extensions,
     PHP_HL_keywords, 
     "\"", "\"\"", "\"\"",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Kotlin",
+    KOTL_HL_extensions,
+    KOTL_HL_keywords, 
+    "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

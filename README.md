@@ -71,6 +71,8 @@ Currently, QV includes syntax highlighting for the following languages:
 -  GDScript
 -  Java
 -  PHP
+-  Vim Script
+-  Kotlin
 
 But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.

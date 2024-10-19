@@ -1,17 +1,16 @@
-# QV
+# QV: Quantum Visual Editor
 [![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/qv)
 [![Version](https://img.shields.io/badge/Version-1.1.0-darkblue)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
-QV - Quantum Visual editor, is a fast and intuitive terminal-based text editor based on the kilo  
-<[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
+QV is a fast and intuitive terminal-based text editor based on the kilo <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
 editor, with a _lot_ of improvements! For example: better syntax highlighting!
 It also runs  on the C standard library so that's good!
 
 Requirements
 -------
-- C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
-- Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
-- Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
+* C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
+* Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
+* Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
 
 Install
 -------
@@ -53,24 +52,26 @@ To get started, just open a file via QV!
 qv <filename>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
--  C/C++
--  Shell
--  Golang
--  Python
--  JS/TS
--  C#
--  HTML
--  Rust
--  CSS
--  Ruby
--  D
--  SQL
--  Lua
--  Powershell
--  Batch
--  GDScript
--  Java
--  PHP
+*  C/C++
+*  Shell
+*  Golang
+*  Python
+*  JS/TS
+*  C#
+*  HTML
+*  Rust
+*  CSS
+*  Ruby
+*  D
+*  SQL
+*  Lua
+*  Powershell
+*  Batch
+*  GDScript
+*  Java
+*  PHP
+*  Vim Script
+*  Kotlin
 
 But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.
@@ -92,8 +93,8 @@ to bad for that. No, this editor is meant to be like Nano, a simple command line
 
 Config
 ------
-New feature! Config! With a config file you can change some settings (tab_stop, quit_times etc...).
-Heres a basic little tutorial for a config.  
+New feature! Config! With a config file you can change some settings (tab_stop, quit_times etc...), nothing much but i guess
+it's functional. Heres a basic little tutorial for a config.  
   
 To start, you'd want to create a config file:
 ```bash
@@ -113,6 +114,7 @@ qv <filename> <config>
 ```
 Yeah, cool. Enjoy the project!
 
+    **DISCLAIMER**
     This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the 
     Apache-2.0-license (For the modified parts of the source code), please abide to each license
     under the fitting circumstances.

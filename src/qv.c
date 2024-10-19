@@ -551,7 +551,7 @@ int getWindowSize(int *rows, int *cols) {
 /*** syntax highlighting ***/
 
 int is_separator(int c) {
-  return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[];", c) != NULL;
+  return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[]!\\:|;", c) != NULL;
 }
 
 void editorUpdateSyntax(erow *row) {
@@ -938,7 +938,7 @@ void editorSave() {
   }
 
   free(buf);
-  editorSetStatusMessage("Can't save! I/O error: %s", strerror(errno));
+  editorSetStatusMessage("[ERROR]: Can't save! I/O error: %s", strerror(errno));
 }
 
 /*** find ***/
@@ -1126,9 +1126,9 @@ void editorDrawStatusBar(struct abuf *ab) {
   char status[80], rstatus[80];
   int len = snprintf(status, sizeof(status), "%.20s - %d lines %s",
     E.filename ? E.filename : "[No Name]", E.numrows,
-    E.dirty ? "(modified)" : "");
+    E.dirty ? "[+]" : "");
   int rlen = snprintf(rstatus, sizeof(rstatus), "%s | %d/%d",
-    E.syntax ? E.syntax->filetype : "no ft", E.cy + 1, E.numrows);
+    E.syntax ? E.syntax->filetype : "[No FT]", E.cy + 1, E.numrows);
   if (len > E.screencols) len = E.screencols;
   abAppend(ab, status, len);
   while (len < E.screencols) {
@@ -1274,7 +1274,7 @@ void editorProcessKeypress() {
 
     case CTRL_KEY('q'):
       if (E.dirty && quit_times > 0) {
-        editorSetStatusMessage("WARNING!!! File has unsaved changes. "
+        editorSetStatusMessage("[WARNING]: File has unsaved changes. "
           "Press Ctrl-Q %d more times to quit.", quit_times);
         quit_times--;
         return;
@@ -1345,10 +1345,10 @@ void editorProcessKeypress() {
 
 /*** init ***/
 
-void load_config(const char *filename) {
+void loadConfig(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
-        perror("Configuration file could not be opened");
+        perror("[ERROR]: Configuration file could not be opened");
         return;
     }
 
@@ -1404,7 +1404,7 @@ int main(int argc, char *argv[]) {
 
     // Load configuration if the file is provided
     if (argc >= 3) {
-        load_config(argv[2]);
+        loadConfig(argv[2]);
     } else if (argc >= 2) {
         editorOpen(argv[1]);
     }

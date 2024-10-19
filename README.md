@@ -4,8 +4,11 @@
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
 QV is a fast and intuitive terminal-based text editor based on the kilo <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
 editor, with a _lot_ of improvements! For example: better syntax highlighting!
-It also runs  on the C standard library so that's good!
-
+It also runs  on the C standard library so that's good!   
+  
+[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/helloworld.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/qvimg.png)
+QV opened in QV.  
+  
 Requirements
 -------
 * C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>

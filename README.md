@@ -26,7 +26,7 @@ git clone https://github.com/ElisStaaf/qv ~/qv
 gh repo clone ElisStaaf/qv ~/qv
 
 # cURL
-curl -s https://github.com/ElisStaaf/qv/blob/main/{src/qv.c,init/init.sh,init/init.ps1,init/init.bat,init/init.fish,Makefile} ~/qv
+curl -s https://github.com/ElisStaaf/qv/blob/main/{src/qv.c,Makefile,README.md} ~/qv
 ```
 
 After this, you'd want to use "make" to initialize an executable:

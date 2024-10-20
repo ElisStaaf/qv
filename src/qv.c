@@ -302,6 +302,25 @@ char *DART_HL_keywords[] = {
     "interface|"
 };
 
+char *ZIG_HL_extensions[] = { ".zig", NULL };
+char *ZIG_HL_keywords[] = {
+    "const", "try", "return", "and", "or", "var", "test", "extern", "comptime", "for", "break", "if", "deer",
+    "while", "else", "switch",
+
+    "@import|", "void|", "i64|", "u32|", "pub|", "fn|", "true|", "false|", "@TypeOf|", "null|", "undefined|",
+    "@compileError|", "@as", "@setFloatMode|", "@intCast|", "@Vector|", "i32|", "u64|", "i8|", "u8|", "anyerror|",
+    "c_int|", "usize|", "f32|", "f64|"
+};
+
+char *ASM_HL_extensions = { ".s", ".asm", ".asem", NULL };
+char *ASM_HL_keywords = {
+    "pushl", "movl", "call", "subl", "leave", "ret", "movq", "subq", "cmpl", "jmp", "je", "jg", "jge", "jl",
+    "jle", "jne", "add", "and", "div", "in", "dec", "cwd", "inc", "int", "into", "iret", "lea", "les", "lahf",
+    "lodsb", "loc", "mov", "movsb", "movsw", "neg", "mul", "not", "or", "sub", "rol", "ror", "xor", "wait",
+
+    ".section|", ".globl|", ".def|", ".file|", ".text|", ".ascii|", ".data|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -457,6 +476,20 @@ struct editorSyntax HLDB[] = {
     SWFT_HL_extensions,
     SWFT_HL_keywords, 
     "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Zig",
+    ZIG_HL_extensions,
+    ZIG_HL_keywords, 
+    "//", "\\\\", "\\\\",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Assembly",
+    ASM_HL_extensions,
+    ASM_HL_keywords, 
+    ";", "COMMENT @", "@",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

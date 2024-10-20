@@ -1,4 +1,4 @@
-# QV: Quantum Visual Editor
+# QV: Quantum Visual editor
 [![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/qv)
 [![Version](https://img.shields.io/badge/Version-1.1.1-brightgreen)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  

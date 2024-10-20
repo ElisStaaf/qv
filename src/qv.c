@@ -312,13 +312,19 @@ char *ZIG_HL_keywords[] = {
     "c_int|", "usize|", "f32|", "f64|"
 };
 
-char *ASM_HL_extensions = { ".s", ".asm", ".asem", NULL };
-char *ASM_HL_keywords = {
+char *ASM_HL_extensions[] = { ".s", ".asm", ".asem", NULL };
+char *ASM_HL_keywords[] = {
     "pushl", "movl", "call", "subl", "leave", "ret", "movq", "subq", "cmpl", "jmp", "je", "jg", "jge", "jl",
     "jle", "jne", "add", "and", "div", "in", "dec", "cwd", "inc", "int", "into", "iret", "lea", "les", "lahf",
     "lodsb", "loc", "mov", "movsb", "movsw", "neg", "mul", "not", "or", "sub", "rol", "ror", "xor", "wait",
 
     ".section|", ".globl|", ".def|", ".file|", ".text|", ".ascii|", ".data|"
+};
+
+char *CBL_HL_extensions[] = { ".cbl", ".cobol", ".cob", NULL };
+char *CBL_HL_keywords[] = {
+    "IDENTIFICATION", "DIVISION", "PROGRAM-ID", "DATA", "FILE", "SECTION", "WORKING-STORAGE", "PIC", "VALUE",
+    "PROCEDURE", "MESSAGE", "DISPLAY", "PROGRAM", "MAIN-PROCEDURE", "STOP", "RUN", "END"
 };
 
 /* HLDB stands for HighLighting DataBase, and contains 
@@ -490,6 +496,13 @@ struct editorSyntax HLDB[] = {
     ASM_HL_extensions,
     ASM_HL_keywords, 
     ";", "COMMENT @", "@",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "COBOL",
+    CBL_HL_extensions,
+    CBL_HL_keywords, 
+    "*>", "**********", "***************",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

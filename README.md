@@ -85,7 +85,7 @@ touch "main.c" # Create file
 qv "main.c" # Open file
 ```
 I am greeted to this interface:
-[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/startup.png)
+[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/startup.png)
 Great! It started up! I'm writing a simple Hello World app, so i can just write this:
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/helloworld.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/helloworld.png)
 As you can see, the syntax highlighting kicked in right away! Now, i save my app with `Ctrl+S`, then quit with `Ctrl+Q`. Then i can run the

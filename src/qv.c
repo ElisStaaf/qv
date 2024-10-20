@@ -275,13 +275,31 @@ char *VIM_HL_keywords[] = {
     "=|", "=~|", "!=|", "!~|", "&&|", "|||"
 };
 
-char *KOTL_HL_extensions[] = { "kt", "kts", "ktm", NULL };
+char *KOTL_HL_extensions[] = { ".kt", ".kts", ".ktm", NULL };
 char *KOTL_HL_keywords[] = {
     "as", "break", "class", "continue", "do", "else", "for", "fun", "if", "in", "interface", "is",
     "object", "package", "super", "throw", "try", "typealias", "typeof", "val", "var", "when",
     "while", "public", "override", "private", "field",
 
     "false|", "true|", "null|", "return|", "this|"
+};
+
+char *SWFT_HL_extensions[] = { ".swift", NULL };
+char *SWFT_HL_keywords[] = {
+    "import", "func", "struct", "var", "let", "class", "enum", "open", "extension", "init", "public",
+    "static", "typealias", "switch", "case", "break", "continue", "if", "else", "where", "while", "for",
+    "in", "repeat", "throw", "catch", "try",
+
+    "return|", "true|", "false|", "default|", "nil|", "Any|"
+};
+
+char *DART_HL_extensions[] = { ".dart", NULL };
+char *DART_HL_keywords[] = {
+    "switch", "assert", "finally", "case", "if", "else", "break", "continue", "in", "is", "final", "try",
+    "catch", "throw", "rethrow", "super", "extends", "as", "export", "import",
+
+    "true|", "false|", "null|", "Function|", "const|", "class|", "new|", "var|", "this|", "async|", "sync|",
+    "interface|"
 };
 
 /* HLDB stands for HighLighting DataBase, and contains 
@@ -417,13 +435,27 @@ struct editorSyntax HLDB[] = {
     "Vim Script",
     PHP_HL_extensions,
     PHP_HL_keywords, 
-    "\"", "\"\"", "\"\"",
+    "\"", "\"\"\"", "\"\"\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {
     "Kotlin",
     KOTL_HL_extensions,
     KOTL_HL_keywords, 
+    "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Swift",
+    SWFT_HL_extensions,
+    SWFT_HL_keywords, 
+    "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Dart",
+    SWFT_HL_extensions,
+    SWFT_HL_keywords, 
     "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },

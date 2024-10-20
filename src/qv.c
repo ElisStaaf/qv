@@ -108,10 +108,10 @@ char *C_HL_keywords[] = {
   "#endif", "goto",
 
   "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-  "void|", "true|", "false|", "NULL|"
+  "void|", "true|", "false|", "NULL|", "auto|", "const|"
 };
 
-char *SH_HL_extensions[] = { ".sh", NULL };
+char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile",  NULL };
 char *SH_HL_keywords[] = {
     "case", "esac", "if", "fi", "elif", "else", "then", "echo", "alias",
     "expr", "for", "in", "function", "return", "done", "grep", "find",
@@ -135,7 +135,7 @@ char *PY_HL_keywords[] = {
     "match", "case", "if", "else", "elif", "import", "print", "range",
     "in", "for", "while", "map", "zip", "from", "class", "def", "lambda",
     "return", "with", "is", "not", "try", "except", "finally", "yield", "or",
-    "pass", "nonlocal", "global", "as", "assert", "yield", "and"
+    "pass", "nonlocal", "global", "as", "assert", "yield", "and",
 
     "int|", "str|", "float|", "any|", "None|", "True|", "False|", "continue|",
     "break|", "raise|", "exec|", "eval|", "len|", "super|", "__import__|"
@@ -341,7 +341,7 @@ struct editorSyntax HLDB[] = {
     "Shell",
     SH_HL_extensions,
     SH_HL_keywords,
-    "#", ": '", "'",
+    "#", ":'", "'",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {
@@ -479,8 +479,8 @@ struct editorSyntax HLDB[] = {
   },
   {
     "Dart",
-    SWFT_HL_extensions,
-    SWFT_HL_keywords, 
+    DART_HL_extensions,
+    DART_HL_keywords, 
     "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },

@@ -111,7 +111,7 @@ char *C_HL_keywords[] = {
   "void|", "true|", "false|", "NULL|", "auto|", "const|"
 };
 
-char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile",  NULL };
+char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", "Makefile", NULL };
 char *SH_HL_keywords[] = {
     "case", "esac", "if", "fi", "elif", "else", "then", "echo", "alias",
     "expr", "for", "in", "function", "return", "done", "grep", "find",
@@ -266,7 +266,7 @@ char *PHP_HL_keywords[] = {
     /* Thank you Chris from https://www.php.net/manual/en/reserved.keywords.php, you made my life so much easier! */
 };
 
-char *VIM_HL_extensions[] = { ".vim", NULL };
+char *VIM_HL_extensions[] = { ".vim", ".vimrc", NULL };
 char *VIM_HL_keywords[] = {
     "function!", "let", "if", "else", "return", "endif", "endfunction", "echo", "len", "strlen",
     "strchars", "split", "join", "tolower", "toupper", "abort", "echon", "for", "in", "continue",

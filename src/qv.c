@@ -327,6 +327,14 @@ char *CBL_HL_keywords[] = {
     "PROCEDURE", "MESSAGE", "DISPLAY", "PROGRAM", "MAIN-PROCEDURE", "STOP", "RUN", "END"
 };
 
+char *EX_HL_extensions[] = { ".ex", ".exs", NULL };
+char *EX_HL_keywords[] = {
+    "import", "except", "if", "unless", "do", "use", "when", "and", "raise", "case", "alias", "else",
+    "with", "exit", "@spec", "only",
+
+    "Kernel|", "def|", "defmodule|", "end|", "defp|", "nil|", "true|", "false|", "defstruct|", "IO|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -503,6 +511,13 @@ struct editorSyntax HLDB[] = {
     CBL_HL_extensions,
     CBL_HL_keywords, 
     "*>", "**********", "***************",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Elixir",
+    EX_HL_extensions,
+    EX_HL_keywords, 
+    "#", "@doc \"\"\"", "\"\"\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

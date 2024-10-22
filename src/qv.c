@@ -102,13 +102,13 @@ struct editorConfig E;
 /* The "full" syntax highlighting list */
 char *C_HL_extensions[] = { ".c", ".h", ".cpp", NULL };
 char *C_HL_keywords[] = {
-  "switch", "if", "while", "for", "break", "continue", "return", "else",
-  "struct", "union", "typedef", "static", "enum", "case", "#define", 
-  "#include", "#if", "#else", "#ifdef", "#ifndef", "#error", "#warning",
-  "#endif", "goto",
+    "switch", "if", "while", "for", "break", "continue", "return", "else",
+    "struct", "union", "typedef", "static", "enum", "case", "#define", 
+    "#include", "#if", "#else", "#ifdef", "#ifndef", "#error", "#warning",
+    "#endif", "goto",
 
-  "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-  "void|", "true|", "false|", "NULL|", "auto|", "const|"
+    "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
+    "void|", "true|", "false|", "NULL|", "auto|", "const|"
 };
 
 char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", "Makefile", NULL };
@@ -343,6 +343,14 @@ char *HS_HL_keywords[] = {
     "class|", "data|", "do|", "if|", "then|", "else|", "import|", "let|", "mdo|", "module|", "proc"
 };
 
+char *R_HL_extensions[] = { ".r", ".rd", ".rsx", NULL};
+char *R_HL_keywords[] = {
+    "if", "else", "while", "repeat", "for", "in", "next", "break", "print", "paste", "return", "c",
+    "help", "library", "install.packages",
+
+    "function|", "TRUE|", "FALSE|", "NULL|", "Inf|", "NaN|", "NA|",
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -354,7 +362,7 @@ struct editorSyntax HLDB[] = {
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
   {
-    "Shell",
+   "Shell",
     SH_HL_extensions,
     SH_HL_keywords,
     "#", ":'", "'",
@@ -533,6 +541,13 @@ struct editorSyntax HLDB[] = {
     HS_HL_extensions,
     HS_HL_keywords, 
     "--", "{-", "-}",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "R",
+    HS_HL_extensions,
+    HS_HL_keywords, 
+    "#", "\"", "\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

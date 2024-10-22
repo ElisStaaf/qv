@@ -77,6 +77,12 @@ Currently, QV includes syntax highlighting for the following languages:
 *  Kotlin
 *  Swift
 *  Dart
+*  Zig
+*  Assembly
+*  COBOL
+*  Elixir
+*  Haskell
+*  R
 
 But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.

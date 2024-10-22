@@ -352,9 +352,9 @@ char *R_HL_keywords[] = {
 };
 
 /* I messed up. I got a segmentation fault when running these extensions and that's because
- * it checks for a dot! I need to repurpose this somehow, but not today!
+ * it checks for a dot... I need to repurpose this somehow, but not today.
  */
-char *MAKE_HL_extensions[] = { ".Makefile", ".makefile", ".mk", ".make", ".mak", NULL };
+char *MAKE_HL_extensions[] = { ".Makefile", ".makefile", ".mk", ".make", ".mak", "GNUmakefile", NULL };
 char *MAKE_HL_keywords[] = {
     "shell", "include", "ifeq", "else", "endif", "wildcard", "echo", "strip", "filter",
     "filter-out", "export", "override", "define", "endef", "ifdef", "ifndef", "ifneq",

@@ -660,7 +660,7 @@ int getWindowSize(int *rows, int *cols) {
 /*** syntax highlighting ***/
 
 int is_separator(int c) {
-  return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[]!\\:|;", c) != NULL;
+  return isspace(c) || c == '\0' || strchr(",.()+-/*=@#~&%<>[]{}!\\:|;", c) != NULL;
 }
 
 void editorUpdateSyntax(erow *row) {
@@ -1003,7 +1003,10 @@ void editorOpen(char *filename) {
   editorSelectSyntaxHighlight();
 
   FILE *fp = fopen(filename, "r");
-  if (!fp) die("fopen");
+  if (!fp) {
+    perror("[ERROR]: The requested file could not be opened.");
+    return;
+  }
 
   char *line = NULL;
   size_t linecap = 0;

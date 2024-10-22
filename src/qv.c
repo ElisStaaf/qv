@@ -793,13 +793,13 @@ void editorUpdateSyntax(erow *row) {
     editorUpdateSyntax(&E.row[row->idx + 1]);
 }
 
-int editorSyntaxToColor(int hl) {
+int editorSyntaxToColour(int hl) {
   switch (hl) {
     case HL_COMMENT:
-    case HL_MLCOMMENT: return 36;
-    case HL_KEYWORD1: return 33;
+    case HL_MLCOMMENT: return 31;
+    case HL_KEYWORD1: return 35;
     case HL_KEYWORD2: return 32;
-    case HL_STRING: return 35;
+    case HL_STRING: return 96;
     case HL_NUMBER: return 31;
     case HL_MATCH: return 34;
     default: return 37;
@@ -1230,7 +1230,7 @@ void editorDrawRows(struct abuf *ab) {
           }
           abAppend(ab, &c[j], 1);
         } else {
-          int color = editorSyntaxToColor(hl[j]);
+          int color = editorSyntaxToColour(hl[j]);
           if (color != current_color) {
             current_color = color;
             char buf[16];

@@ -1,6 +1,10 @@
-SHELL=sh
-SOURCE="src/qv.c"
-BINARY="/usr/bin/qv"
+BIN=/usr/bin/qv
+SRC=src/qv.c
+DIR=$(shell pwd)
 
 install:
-	$(CC) ${SOURCE} -o ${BINARY} -Wall -Wextra -pedantic -std=c99
+	$(CC) ${SRC} -o ${BIN} -Wall -Wextra -pedantic -std=c99
+
+remove:
+	cd .. 
+	rm -rf ${DIR} && rm -rf ${BIN}

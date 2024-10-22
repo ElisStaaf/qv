@@ -335,6 +335,14 @@ char *EX_HL_keywords[] = {
     "Kernel|", "def|", "defmodule|", "end|", "defp|", "nil|", "true|", "false|", "defstruct|", "IO|"
 };
 
+char *HS_HL_extensions[] = { ".hsc", ".hs", NULL};
+char *HS_HL_keywords[] = {
+    "as", "case", "of", "family", "instance", "default", "deriving", "forall", "foreign", "hiding"
+    "infix", "infixl", "infixr", "instance", "in", "newtype", "qualified", "rec", "type", "where",
+
+    "class|", "data|", "do|", "if|", "then|", "else|", "import|", "let|", "mdo|", "module|", "proc"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -518,6 +526,13 @@ struct editorSyntax HLDB[] = {
     EX_HL_extensions,
     EX_HL_keywords, 
     "#", "@doc \"\"\"", "\"\"\"",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Haskell",
+    HS_HL_extensions,
+    HS_HL_keywords, 
+    "--", "{-", "-}",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

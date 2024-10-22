@@ -111,7 +111,7 @@ char *C_HL_keywords[] = {
     "void|", "true|", "false|", "NULL|", "auto|", "const|"
 };
 
-char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", "Makefile", NULL };
+char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", NULL };
 char *SH_HL_keywords[] = {
     "case", "esac", "if", "fi", "elif", "else", "then", "echo", "alias",
     "expr", "for", "in", "function", "return", "done", "grep", "find",
@@ -351,6 +351,19 @@ char *R_HL_keywords[] = {
     "function|", "TRUE|", "FALSE|", "NULL|", "Inf|", "NaN|", "NA|",
 };
 
+/* I messed up. I got a segmentation fault when running these extensions and that's because
+ * it checks for a dot! I need to repurpose this somehow, but not today!
+ */
+char *MAKE_HL_extensions[] = { ".Makefile", ".makefile", ".mk", ".make", ".mak", NULL };
+char *MAKE_HL_keywords[] = {
+    "shell", "include", "ifeq", "else", "endif", "wildcard", "echo", "strip", "filter",
+    "filter-out", "export", "override", "define", "endef", "ifdef", "ifndef", "ifneq",
+    "subst", "patsubst", "foreach", "if", "call", "vpath", "or", "addprefix",
+
+    "true|", "false|", "SHELL|", "MAKE|", ".EXPORT_ALL_VARIABLES|", ".PHONY|",
+    ".DELETE_ON_ERROR|"
+};
+
 /* HLDB stands for HighLighting DataBase, and contains 
  * the settings and initialization for the syntax highlighting */
 struct editorSyntax HLDB[] = {
@@ -548,6 +561,13 @@ struct editorSyntax HLDB[] = {
     HS_HL_extensions,
     HS_HL_keywords, 
     "#", "\"", "\"",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
+  },
+  {
+    "Makefile",
+    MAKE_HL_extensions,
+    MAKE_HL_keywords, 
+    "#", "echo \"", "\"",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
   },
 };

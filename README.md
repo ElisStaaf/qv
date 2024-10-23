@@ -56,7 +56,7 @@ Get Started
 --------
 To get started, just open a file via QV!
 ```bash
-qv <filename>
+qv <filename> <config>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
 *  C/C++
@@ -106,6 +106,14 @@ never existed and i was just crazy. And that's the tutorial!
 Oh, and before you go, this text editor is not meant to be anyones main editor, it's way
 to bad for that. No, this editor is meant to be like Nano, a simple command line editor! And, with that, enjoy!
 
+Keybinds
+--------
+```
+Ctrl+S - Save
+Ctrl+Q - Quit
+Ctrl+F - Find
+```
+
 Config
 ------
 New feature! Config! With a config file you can change some settings (tab_stop, quit_times etc...), nothing much but i guess
@@ -123,9 +131,9 @@ tab_stop=4
 quit_times=2
 ```
 tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
-modifying a file. To run with a config file, simply:
+modifying a file. To run with your config file, simply:
 ```bash
-qv <filename> <config>
+qv <filename> config.qv
 ```
 Yeah, cool. Enjoy the project!
 

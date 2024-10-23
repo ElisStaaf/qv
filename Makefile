@@ -1,5 +1,2 @@
-BIN=/usr/bin/qv
-SRC=src/qv.c
-
 install:
-	$(CC) ${SRC} -o ${BIN} -Wall -Wextra -pedantic -std=c99
+	$(CC) src/qv.c -o /usr/bin/qv -Wall -Wextra -pedantic -std=c99

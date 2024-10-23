@@ -2,9 +2,12 @@
 [![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/qv)
 [![Version](https://img.shields.io/badge/Version-1.1.1-brightgreen)](https://github.com/ElisStaaf/qv)
 [![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
-QV is a fast and intuitive terminal-based text editor based on the kilo <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
-editor, with a _lot_ of improvements! For example: better syntax highlighting & configuration files.
-It also runs  on the C standard library so that's good!   
+QV is a fast and intuitive terminal-based text editor based on the modified "kilo"
+<[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
+editor made by Paige Ruten, which is in turn based on Salvatore Sanfilippo's "kilo".
+But this version has a _lot_ of improvements! For example: better syntax highlighting
+& even configuration files (this might just be my opinion, but a much better colourscheme as well).
+It also runs  on the C standard library so that's good, i guess!   
   
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/qvimg.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/qvimg.png)
 QV opened in QV.  

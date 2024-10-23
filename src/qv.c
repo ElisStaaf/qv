@@ -1,5 +1,31 @@
+/* QV: Quantum Visual editor.
+ *
+ * QV is a fork of the modified version of "Kilo" by Snaptoken, 
+ * which is licensed under the BSD-Clause-2 License, while all
+ * of the modified pieces of code are released Apache License 2.0. 
+ * Please abide to the fitting licenses under the fitting
+ * circumstances. 
+ *
+ * Thank you Salvatore Sanfilippo (antirez on github.com) for 
+ * making the original "Kilo" editor & thank you Paige Ruten
+ * (paigeruten on github.com, but the project i forked is on her
+ * "tutorial account"; snaptoken) for making the  slightly modified
+ * version. Speaking about Snaptoken, she has a really good tutorial
+ * on Kilo, which i followed to make this editor, check it out on 
+ * <https://viewsourcecode.org/snaptoken/kilo>,
+ * it'll be worth your time.
+ *
+ * This is the QV source code, feel free to contribute on 
+ * <https://github.com/ElisStaaf/qv>. Or you can just enjoy
+ * the editor, i won't judge! And with that, enjoy!
+ *
+ * -- Elis Staaf, 2024
+ */
+
 /*** includes ***/
 
+/* We need these "sources" for different
+ * functions, so DON'T remove. */
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -91,8 +117,8 @@ struct editorConfig {
   time_t statusmsg_time;
   struct editorSyntax *syntax;
   struct termios orig_termios;
-  int tab_stop;      // Changed from #define to a variable
-  int quit_times;    // Changed from #define to a variable
+  int tab_stop;      /* Changed from #define to a variable */
+  int quit_times;    /* Changed from #define to a variable */
 };
 
 struct editorConfig E;
@@ -100,15 +126,17 @@ struct editorConfig E;
 /*** filetypes ***/
 
 /* The "full" syntax highlighting list */
+
 char *C_HL_extensions[] = { ".c", ".h", ".cpp", NULL };
 char *C_HL_keywords[] = {
     "switch", "if", "while", "for", "break", "continue", "return", "else",
     "struct", "union", "typedef", "static", "enum", "case", "#define", 
     "#include", "#if", "#else", "#ifdef", "#ifndef", "#error", "#warning",
-    "#endif", "goto",
+    "#endif", "goto", "class", /* While "class" is C++ only, i don't want to
+    Overflow the struct with (almost) the same keywords. */
 
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-    "void|", "true|", "false|", "NULL|", "auto|", "const|"
+    "void|", "true|", "false|", "NULL|", "auto|", "const|", "bool|"
 };
 
 char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", NULL };
@@ -990,7 +1018,7 @@ void editorDelChar() {
   }
 }
 
-/*** file i/o ***/
+/*** file I/O ***/
 
 char *editorRowsToString(int *buflen) {
   int totlen = 0;
@@ -1483,13 +1511,12 @@ void loadConfig(const char *filename) {
     while (fgets(line, sizeof(line), file)) {
         char *equals = strchr(line, '=');
         if (equals) {
-            *equals = '\0'; // Null-terminate at '=' to split key
+            *equals = '\0'; /* Null-terminate at '=' to split key */
             char *key = line;
             char *value = equals + 1;
 
-            // Remove any whitespace
-            key[strcspn(key, "\r\n")] = 0; // remove trailing newline
-            value[strcspn(value, "\r\n")] = 0; // remove trailing newline
+            key[strcspn(key, "\r\n")] = 0; 
+            value[strcspn(value, "\r\n")] = 0;
 
             if (strcmp(key, "tab_stop") == 0) {
                 E.tab_stop = atoi(value);
@@ -1502,7 +1529,6 @@ void loadConfig(const char *filename) {
     fclose(file);
 }
 
-// Initialize the editor configuration
 void initEditor() {
     E.cx = 0;
     E.cy = 0;
@@ -1517,9 +1543,9 @@ void initEditor() {
     E.statusmsg_time = 0;
     E.syntax = NULL;
 
-    // Set default values
-    E.tab_stop = 8;  // Default tab stop
-    E.quit_times = 3; // Default quit times
+    /* Set default values */
+    E.tab_stop = 8;  /* Default tab stop */
+    E.quit_times = 3; /* Default quit times */
 
     if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
     E.screenrows -= 2;
@@ -1529,7 +1555,7 @@ int main(int argc, char *argv[]) {
     enableRawMode();
     initEditor();
 
-    // Load configuration if the file is provided
+    /* Load configuration if the file is provided */
     if (argc >= 3) {
         loadConfig(argv[2]);
     } else if (argc >= 2) {

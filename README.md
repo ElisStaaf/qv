@@ -126,7 +126,7 @@ touch config.qv # Name it anything you want, but im naming it "config.qv".
 Qv provides a simple configuration language called... Let's say QvScript. To get all
 of the different options for configuration, you have to look inside the source which is `~/qv/src/qv.c`.
 But im going to just set some simple options.
-```
+```bash
 tab_stop=4
 quit_times=2
 ```

@@ -125,8 +125,8 @@ struct editorConfig E;
  * dot, it is matched as the last past of the filename, for example ".c".
  * Otherwise the pattern is just searched inside the filename, like "Makefile".
  *
- * The list of keywords to highlight is just a list of words, however if they
- * a trailing '|' character is added at the end, they are highlighted in
+ * The list of keywords to highlight is just a list of words, however if 
+ * there's a trailing '|' character added at the end, they are highlighted in
  * a different color, so that you can have two different sets of keywords.
  *
  * Finally add a stanza in the HLDB global variable with two arrays

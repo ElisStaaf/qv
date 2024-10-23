@@ -127,8 +127,8 @@ Qv provides a simple configuration language called... Let's say QvScript. To get
 of the different options for configuration, you have to look inside the source which is `~/qv/src/qv.c`.
 But im going to just set some simple options.
 ```bash
-tab_stop=4
-quit_times=2
+tab_stop=8
+quit_times=10
 ```
 tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
 modifying a file. To run with your config file, simply:

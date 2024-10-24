@@ -42,7 +42,7 @@
 #include <unistd.h>
 
 #define QV_VERSION "1.1.2"
-#define QV_TAB_STOP 8
+#define QV_TAB_STOP 4
 #define QV_QUIT_TIMES 3
 
 #define CTRL_KEY(k) ((k) & 0x1f)
@@ -154,244 +154,36 @@ char *C_HL_keywords[] = {
     "void|", "short|", "auto|", "const|", "bool|"
 };
 
-char *SH_HL_extensions[] = { ".sh", ".bashrc", ".profile", ".bash_profile", NULL };
-char *SH_HL_keywords[] = {
-    "case", "esac", "if", "fi", "elif", "else", "then", "echo", "alias",
-    "expr", "for", "in", "function", "return", "done", "grep", "find",
-
-    "local|", "export|", "set|", "true|", "false|"
-};
-
 char *GO_HL_extensions[] = { ".go", NULL };
 char *GO_HL_keywords[] = {
-    "switch", "case", "if", "else", "go", "package", "import",
-    "return", "func", "for", "default", "goto", "fallthrough", "interface",
+    "if", "for", "range", "while", "defer", "switch", "case", "else", "func", "package",
+    "import", "type", "struct", "import", "const", "var",
 
-    "int|", "string|", "var|", "const|", "map|", "defer", "break|", "continue|",
-    "range|", "type|", "uint|", "rune|", "byte|", "true|", "false|", "nil|",
-    "any|", "float32|", "int32|", "print|", "append|", "min|", "max|", "make|",
-    "clear|", "panic|", "println|", "complex|", "new|"
+    "nil|", "true|", "false|", "error|", "err|", "int|", "int32|", "int64|", "uint|",
+    "uint32|", "uint64|", "string|", "bool|", NULL
 };
 
 char *PY_HL_extensions[] = { ".py", "pyi", NULL };
 char *PY_HL_keywords[] = {
-    "match", "case", "if", "else", "elif", "import", "print", "range",
-    "in", "for", "while", "map", "zip", "from", "class", "def", "lambda",
-    "return", "with", "is", "not", "try", "except", "finally", "yield", "or",
-    "pass", "nonlocal", "global", "as", "assert", "yield", "and",
+    "and", "as", "assert", "break", "class", "continue", "def", "del", "elif", "else", "except",
+    "exec", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "not", "or",
+    "pass", "print", "raise", "return", "try", "while", "with", "yield",
 
-    "int|", "str|", "float|", "any|", "None|", "True|", "False|", "continue|",
-    "break|", "raise|", "exec|", "eval|", "len|", "super|", "__import__|"
-};
-
-char *JS_HL_extensions[] = { ".js", ".ts", NULL };
-char *JS_HL_keywords[] = {
-    "function", "if", "else", "eval", "goto", "try", "catch", "finally",
-    "import", "for", "int", "number", "string", "this", "void", "yield",
-    "while", "char", "break", "continue", "do", "in", "typeof", "boolean",
-
-    "let|", "const|", "private|", "public|", "true|", "false|", "interface|",
-    "class|", "export|", "extends|", "switch|", "case|", "new|"
-};
-
-char *CS_HL_extensions[] = { ".cs", NULL };
-char *CS_HL_keywords[] = {
-    "namespace", "class", "if", "do", "else", "int", "string", "void", "return",
-    "is", "in", "interface", "stackalloc", "double", "while", "char", "float"
-
-    "const|", "let|", "var|", "true|", "false|", "null|", "new|", "out|",
-    "internal|", "enum|", "as|", "using|", "default|", "event|"
-};
-
-char *HTML_HL_extensions[] = { ".htm", ".html", NULL };
-char *HTML_HL_keywords[] = {
-    "<html>", "</html>", "<head>", "</head>", "<body>", "</body>", "<link>",
-    "<meta>", "<title>", "</title>", "<script>", "</script>",
-
-    "<div>|", "</div>|", "<p>|", "</p>|", "<h1>|", "</h1>|", "<svg>|", "</svg>|",
-    "<button>|", "</button>|", "<a>|", "</a>|", "<li>|", "</li>|", "<style>|",
-    "</style>|"
+    "buffer|", "bytearray|", "complex|", "False|", "float|", "frozenset|", "int|", "list|", "long|", 
+    "None|", "set|", "str|", "tuple|", "True|", "type|", "unicode|", "xrange|", NULL
 };
 
 char *RUST_HL_extensions[] = { ".rs", ".rlib", NULL };
 char *RUST_HL_keywords[] = {
-    "fn", "for", "if", "where", "while", "struct", "static", "str", "char", "!",
-    "u8", "u16", "u32", "u64", "u128", "i8", "i16", "i32", "i64", "i128", "loop",
-    "crate", "continue", "break", "as", "ref", "Self", "in", "do", "final", "priv",
+    "as", "async", "await", "const", "crate", "dyn", "enum", "extern", "fn", "impl", "let",
+    "mod", "move", "mut", "pub", "ref", "Self", "static", "struct", "super", "trait", "type",
+    "union", "unsafe", "use", "where", "break", "continue", "else", "for", "if", "in", "loop",
+    "match", "return", "while",
 
-    "let|", "mut|", "pub|", "const|", "return|", "self|", "async|", "await|", "true|",
-    "false|", "type|", "typeof|", "yield|", "try|", "union|", "dyn|"
-};
-
-char *CSS_HL_extensions[] = { ".css", NULL };
-char *CSS_HL_keywords[] = {
-    "color", "backround-color", "transition-duration", "calc", "all", "content", "padding",
-    "quotes", "border", "z-index",
-
-    "@charset|", "@media|", "@keyframes|", "@import|", "@font-feature-values|",
-    "@font-face|"
-};
-
-char *RUBY_HL_extensions[] = { ".rb" ".erb", NULL };
-char *RUBY_HL_keywords[] = {
-    "alias", "and", "begin", "end", "def", "do", "case", "class", "if", "elsif", "else",
-    "redo", "retry", "return", "self", "super", "when", "while", "yield", "or", "in"
-
-    "true|", "false|", "unless|", "undef|", "until|", "nil|", "module|", "defined?|",
-    "BEGIN|", "END|", "__FILE__|", "__LINE__|", "__ENCODING__|"
-};
-
-char *D_HL_extensions[] = { ".d", NULL };
-char *D_HL_keywords[] = {
-    "module", "extern", "public", "private", "import", "char", "int", "enum", "alias",
-    "ubyte", "string", "static", "void", "long", "while", "if", "switch", "case" "return",
-
-    "true|", "false|", "null|"
-};
-
-char *SQL_HL_extensions[] = { ".sql", NULL };
-char *SQL_HL_keywords[] = {
-    "ADD", "ADD CONSTRAINT", "ALL", "ALTER", "COLUMN", "JOIN", "TABLE", "SELECT", "UNION",
-    "PROCEDURE", "OR", "ORDER BY", "ROWNUM", "IS", "IN", "NULL", "EXEC", "DROP", "FROM"
-};
-
-char *LUA_HL_extensions[] = { ".lua", NULL };
-char *LUA_HL_keywords[] = {
-    "and", "or", "if", "else", "do", "while", "function", "end", "not", "return", "until",
-    "repeat", "in", "for", "then", "break", "elseif",
-
-    "local|", "true|", "false|", "nil|"
-};
-
-char *PWSH_HL_extensions[] = { ".ps1", NULL };
-char *PWSH_HL_keywords[] = {
-    "Write-Host", "Write-Output", "Clear-Host", "function", "if", "else", "try", "catch",
-    "throw", "elseif", "echo", "cls", "dir", "ls", "cd",
-
-    "$true|", "$false|", "$null|"
-};
-
-char *BAT_HL_extensions[] = { ".bat", NULL };
-char *BAT_HL_keywords[] = {
-    "@ECHO", "ECHO", "OFF", "SET", "PING", "CD", "CURL", "IF", "ELSE", "FIND" "COPY", "CURL",
-    "ON", "EXIT", "LS", "CLS", "PAUSE", "TITLE", "REM", "IPCONFIG", "TRACERT",
-
-    ">>|", "+|", "-|", "*|", "/|"
-};
-
-char *GD_HL_extensions[] = { ".gd", NULL };
-char *GD_HL_keywords[] = {
-    "func", "var", "const", "class_name", "extends", "if", "elif", "else", "match", "return",
-    "super", "print", "class", "class", "pass", "static", "enum", "breakpoint", "self", "is",
-    "in", "as", "signal", "preload", "await", "yield", "void", "or",
-
-    "@export|", "@icon|", "true|", "false|", "null|"
-};
-
-char *JAVA_HL_extensions[] = { ".java", NULL };
-char *JAVA_HL_keywords[] = {
-    "abstract", "continue", "for", "new", "switch" "assert", "default", "goto" "package",
-    "synchronized", "boolean", "do", "if", "private", "this", "break", "double", "implements",
-    "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum",
-    "return", "while",
-
+    "i8|", "i16|", "i32|", "i64|", "i128|", "isize|", "u8|", "u16|", "u32|", "u64|", "u128|", "usize|",
+    "f32|", "f64|", "bool|", "char|", "Box|", "Option|", "Some|", "None|", "Result|", "Ok|", "Err|",
+    "String|", "Vec|", "fn|", "let|", "const|", "mod|", "struct|", "enum|", "trait|", "union|", "self|",
     "true|", "false|"
-};
-
-char *PHP_HL_extensions[] = { ".php", NULL };
-char *PHP_HL_keywords[] = {
-    "__halt_compiler|", "abstract", "and", "array", "as", "break", "callable", "case", "catch", "class", "clone", "const",
-    "continue", "declare", "default", "die", "do", "echo", "else", "elseif", "empty", "enddeclare", "endfor", "endforeach",
-    "endif", "endswitch", "endwhile", "eval", "exit", "extends", "final", "for", "foreach", "function", "global", "goto", "if",
-    "implements", "include", "include_once", "instanceof", "insteadof", "interface", "isset", "list", "namespace", "new", "or",
-    "print", "private", "protected", "public", "require", "require_once", "return", "static", "switch", "throw", "trait", "try",
-    "unset", "use", "var", "while", "xor"
-    /* Thank you Chris from https://www.php.net/manual/en/reserved.keywords.php, you made my life so much easier! */
-};
-
-char *VIM_HL_extensions[] = { ".vim", ".vimrc", NULL };
-char *VIM_HL_keywords[] = {
-    "function!", "let", "if", "else", "return", "endif", "endfunction", "echo", "len", "strlen",
-    "strchars", "split", "join", "tolower", "toupper", "abort", "echon", "for", "in", "continue",
-    "break", "endfor", "while", "endwhile", "command!", "empty", "sort", "copy",
-
-    "=|", "=~|", "!=|", "!~|", "&&|", "|||"
-};
-
-char *KOTL_HL_extensions[] = { ".kt", ".kts", ".ktm", NULL };
-char *KOTL_HL_keywords[] = {
-    "as", "break", "class", "continue", "do", "else", "for", "fun", "if", "in", "interface", "is",
-    "object", "package", "super", "throw", "try", "typealias", "typeof", "val", "var", "when",
-    "while", "public", "override", "private", "field",
-
-    "false|", "true|", "null|", "return|", "this|"
-};
-
-char *SWFT_HL_extensions[] = { ".swift", NULL };
-char *SWFT_HL_keywords[] = {
-    "import", "func", "struct", "var", "let", "class", "enum", "open", "extension", "init", "public",
-    "static", "typealias", "switch", "case", "break", "continue", "if", "else", "where", "while", "for",
-    "in", "repeat", "throw", "catch", "try",
-
-    "return|", "true|", "false|", "default|", "nil|", "Any|"
-};
-
-char *DART_HL_extensions[] = { ".dart", NULL };
-char *DART_HL_keywords[] = {
-    "switch", "assert", "finally", "case", "if", "else", "break", "continue", "in", "is", "final", "try",
-    "catch", "throw", "rethrow", "super", "extends", "as", "export", "import",
-
-    "true|", "false|", "null|", "Function|", "const|", "class|", "new|", "var|", "this|", "async|", "sync|",
-    "interface|"
-};
-
-char *ZIG_HL_extensions[] = { ".zig", NULL };
-char *ZIG_HL_keywords[] = {
-    "const", "try", "return", "and", "or", "var", "test", "extern", "comptime", "for", "break", "if", "deer",
-    "while", "else", "switch",
-
-    "@import|", "void|", "i64|", "u32|", "pub|", "fn|", "true|", "false|", "@TypeOf|", "null|", "undefined|",
-    "@compileError|", "@as", "@setFloatMode|", "@intCast|", "@Vector|", "i32|", "u64|", "i8|", "u8|", "anyerror|",
-    "c_int|", "usize|", "f32|", "f64|"
-};
-
-char *ASM_HL_extensions[] = { ".s", ".asm", ".asem", NULL };
-char *ASM_HL_keywords[] = {
-    "pushl", "movl", "call", "subl", "leave", "ret", "movq", "subq", "cmpl", "jmp", "je", "jg", "jge", "jl",
-    "jle", "jne", "add", "and", "div", "in", "dec", "cwd", "inc", "int", "into", "iret", "lea", "les", "lahf",
-    "lodsb", "loc", "mov", "movsb", "movsw", "neg", "mul", "not", "or", "sub", "rol", "ror", "xor", "wait",
-
-    ".section|", ".globl|", ".def|", ".file|", ".text|", ".ascii|", ".data|"
-};
-
-char *CBL_HL_extensions[] = { ".cbl", ".cobol", ".cob", NULL };
-char *CBL_HL_keywords[] = {
-    "IDENTIFICATION", "DIVISION", "PROGRAM-ID", "DATA", "FILE", "SECTION", "WORKING-STORAGE", "PIC", "VALUE",
-    "PROCEDURE", "MESSAGE", "DISPLAY", "PROGRAM", "MAIN-PROCEDURE", "STOP", "RUN", "END"
-};
-
-char *EX_HL_extensions[] = { ".ex", ".exs", NULL };
-char *EX_HL_keywords[] = {
-    "import", "except", "if", "unless", "do", "use", "when", "and", "raise", "case", "alias", "else",
-    "with", "exit", "@spec", "only",
-
-    "Kernel|", "def|", "defmodule|", "end|", "defp|", "nil|", "true|", "false|", "defstruct|", "IO|"
-};
-
-char *HS_HL_extensions[] = { ".hsc", ".hs", NULL};
-char *HS_HL_keywords[] = {
-    "as", "case", "of", "family", "instance", "default", "deriving", "forall", "foreign", "hiding"
-    "infix", "infixl", "infixr", "instance", "in", "newtype", "qualified", "rec", "type", "where",
-
-    "class|", "data|", "do|", "if|", "then|", "else|", "import|", "let|", "mdo|", "module|", "proc"
-};
-
-char *R_HL_extensions[] = { ".r", ".rd", ".rsx", NULL};
-char *R_HL_keywords[] = {
-    "if", "else", "while", "repeat", "for", "in", "next", "break", "print", "paste", "return", "c",
-    "help", "library", "install.packages",
-
-    "function|", "TRUE|", "FALSE|", "NULL|", "Inf|", "NaN|", "NA|",
 };
 
 /* HLDB stands for HighLighting DataBase, and contains
@@ -402,13 +194,6 @@ struct editorSyntax HLDB[] = {
         C_HL_extensions,
         C_HL_keywords,
         "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Shell",
-        SH_HL_extensions,
-        SH_HL_keywords,
-        "#", ":'", "'",
         HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
     },
     {
@@ -426,171 +211,10 @@ struct editorSyntax HLDB[] = {
         HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
     },
     {
-        "JS/TS",
-        JS_HL_extensions,
-        JS_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "C#",
-        CS_HL_extensions,
-        CS_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "HTML",
-        HTML_HL_extensions,
-        HTML_HL_keywords,
-        "<!DOCTYPE html>", "<!--", "-->",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
         "Rust",
         RUST_HL_extensions,
         RUST_HL_keywords,
         "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "CSS",
-        CSS_HL_extensions,
-        CSS_HL_keywords,
-        "/**", "/*", "/*",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Ruby",
-        RUBY_HL_extensions,
-        RUBY_HL_keywords,
-        "#", "=begin", "=end",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "D",
-        D_HL_extensions,
-        D_HL_keywords,
-        "//", "/+", "+/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "SQL",
-        SQL_HL_extensions,
-        SQL_HL_keywords,
-        "--", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Lua",
-        LUA_HL_extensions,
-        LUA_HL_keywords,
-        "--", "--[[", "]]",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Powershell",
-        PWSH_HL_extensions,
-        PWSH_HL_keywords,
-        "#", "<#", "#>",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Batch",
-        BAT_HL_extensions,
-        BAT_HL_keywords,
-        "::", "goto comment", ":comment",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "GDScript",
-        GD_HL_extensions,
-        GD_HL_keywords,
-        "#", "\"\"\"", "\"\"\"",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Java",
-        JAVA_HL_extensions,
-        JAVA_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "PHP",
-        PHP_HL_extensions,
-        PHP_HL_keywords,
-        "#", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Vim Script",
-        PHP_HL_extensions,
-        PHP_HL_keywords,
-        "\"", "\"\"\"", "\"\"\"",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Kotlin",
-        KOTL_HL_extensions,
-        KOTL_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Swift",
-        SWFT_HL_extensions,
-        SWFT_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Dart",
-        DART_HL_extensions,
-        DART_HL_keywords,
-        "//", "/*", "*/",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Zig",
-        ZIG_HL_extensions,
-        ZIG_HL_keywords,
-        "//", "\\\\", "\\\\",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Assembly",
-        ASM_HL_extensions,
-        ASM_HL_keywords,
-        ";", "COMMENT @", "@",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "COBOL",
-        CBL_HL_extensions,
-        CBL_HL_keywords,
-        "*>", "**********", "***************",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Elixir",
-        EX_HL_extensions,
-        EX_HL_keywords,
-        "#", "@doc \"\"\"", "\"\"\"",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "Haskell",
-        HS_HL_extensions,
-        HS_HL_keywords,
-        "--", "{-", "-}",
-        HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
-    },
-    {
-        "R",
-        HS_HL_extensions,
-        HS_HL_keywords,
-        "#", "\"", "\"",
         HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS,
     },
 };

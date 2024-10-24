@@ -59,10 +59,10 @@ To get started, just open a file via QV!
 qv <filename> <config>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
-*  C/C++
-*  Golang
-*  Python
-*  Rust
+*  C/C++ (`*.c`, `*.h`, `*.cpp`, `*.hpp`, `*.cc`)
+*  Golang (`*.go`)
+*  Python (`*.py`, `*.pyi`)
+*  Rust (`*.rs`, `*.rlib`)
 
 But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.

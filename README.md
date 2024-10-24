@@ -60,33 +60,9 @@ qv <filename> <config>
 ```
 Currently, QV includes syntax highlighting for the following languages:  
 *  C/C++
-*  Shell
 *  Golang
 *  Python
-*  JS/TS
-*  C#
-*  HTML
 *  Rust
-*  CSS
-*  Ruby
-*  D
-*  SQL
-*  Lua
-*  Powershell
-*  Batch
-*  GDScript
-*  Java
-*  PHP
-*  Vim Script
-*  Kotlin
-*  Swift
-*  Dart
-*  Zig
-*  Assembly
-*  COBOL
-*  Elixir
-*  Haskell
-*  R
 
 But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
 use the "C" programming language.

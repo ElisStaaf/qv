@@ -274,44 +274,29 @@ int editorReadKey() {
                 if (read(STDIN_FILENO, &seq[2], 1) != 1) return '\x1b';
                 if (seq[2] == '~') {
                     switch (seq[1]) {
-                    case '1':
-                        return HOME_KEY;
-                    case '3':
-                        return DEL_KEY;
-                    case '4':
-                        return END_KEY;
-                    case '5':
-                        return PAGE_UP;
-                    case '6':
-                        return PAGE_DOWN;
-                    case '7':
-                        return HOME_KEY;
-                    case '8':
-                        return END_KEY;
+                    case '1': return HOME_KEY;
+                    case '3': return DEL_KEY;
+                    case '4': return END_KEY;
+                    case '5': return PAGE_UP;
+                    case '6': return PAGE_DOWN;
+                    case '7': return HOME_KEY;
+                    case '8': return END_KEY;
                     }
                 }
             } else {
                 switch (seq[1]) {
-                case 'A':
-                    return ARROW_UP;
-                case 'B':
-                    return ARROW_DOWN;
-                case 'C':
-                    return ARROW_RIGHT;
-                case 'D':
-                    return ARROW_LEFT;
-                case 'H':
-                    return HOME_KEY;
-                case 'F':
-                    return END_KEY;
+                case 'A': return ARROW_UP;
+                case 'B': return ARROW_DOWN;
+                case 'C': return ARROW_RIGHT;
+                case 'D': return ARROW_LEFT;
+                case 'H': return HOME_KEY;
+                case 'F': return END_KEY;
                 }
             }
         } else if (seq[0] == 'O') {
             switch (seq[1]) {
-            case 'H':
-                return HOME_KEY;
-            case 'F':
-                return END_KEY;
+            case 'H': return HOME_KEY;
+            case 'F': return END_KEY;
             }
         }
 
@@ -477,20 +462,13 @@ void editorUpdateSyntax(erow *row) {
 int editorSyntaxToColour(int hl) {
     switch (hl) {
     case HL_COMMENT:
-    case HL_MLCOMMENT:
-        return 31;
-    case HL_KEYWORD1:
-        return 35;
-    case HL_KEYWORD2:
-        return 32;
-    case HL_STRING:
-        return 96;
-    case HL_NUMBER:
-        return 31;
-    case HL_MATCH:
-        return 34;
-    default:
-        return 37;
+    case HL_MLCOMMENT: return 31;
+    case HL_KEYWORD1: return 35;
+    case HL_KEYWORD2: return 32;
+    case HL_STRING: return 96;
+    case HL_NUMBER: return 31;
+    case HL_MATCH: return 34;
+    default: return 37;
     }
 }
 

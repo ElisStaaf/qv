@@ -158,7 +158,7 @@ char *C_HL_keywords[] = {
 char *GO_HL_extensions[] = { ".go", NULL };
 char *GO_HL_keywords[] = {
     "if", "for", "range", "while", "defer", "switch", "case", "else", "func", "package",
-    "import", "type", "struct", "import", "const", "var",
+    "import", "type", "struct", "import", "const", "var", "make", "chan",
 
     "nil|", "true|", "false|", "error|", "err|", "int|", "int32|", "int64|", "uint|",
     "uint32|", "uint64|", "string|", "bool|", NULL
@@ -341,7 +341,7 @@ int getWindowSize(int *rows, int *cols) {
 /* ==================== Syntax Highlighting ==================== */
 
 int is_separator(int c) {
-    return isspace(c) || c == '\0' || strchr(",.()+-/*=@#~&%<>[]{}!\\:|;", c) != NULL;
+    return isspace(c) || c == '\0' || strchr(",.()+-/*=@#~&%<>[]{}!\\:|;?", c) != NULL;
 }
 
 void editorUpdateSyntax(erow *row) {

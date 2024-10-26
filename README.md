@@ -46,6 +46,7 @@ sudo make install
 *  Find
 *  Status bar to show state of editor
 *  Line numbers
+*  Theming
 
 ## Usage
 ```bash

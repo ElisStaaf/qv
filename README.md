@@ -13,14 +13,12 @@ It also runs  on the C standard library so that's good, i guess!
 [![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/qvimg.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/qvimg.png)
 QV opened in QV.  
   
-Requirements
--------
+## Requirements
 * C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
 * Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
 * Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
 
-Install
--------
+## Install
 To install, you can:
 ```bash
 # Git
@@ -39,79 +37,26 @@ cd ~/qv
 sudo make install
 ```
 
-Project layout
---------
-```
-├── helloworld.png   Picture for README
-├── LICENSE          License for source
-├── Makefile         Makefile for config
-├── README.md        README for info
-├── src/             Source code
-│   └── qv.c         Source file
-├── startup.png      Picture for README
-└── TODO             Todo list
-```
+## Out of the box features
+*  Syntax highlighting
+   *  C/C++ (`*.c`, `*.h`, `*.cpp`, `*.hpp`, `*.cc`)
+   *  Golang (`*.go`)
+   *  Python (`*.py`, `*.pyi`)
+   *  Rust (`*.rs`, `*.rlib`)
+*  Find
+*  Status bar to show state of editor
+*  Line numbers
 
-Get Started
---------
-To get started, just open a file via QV!
+## Usage
 ```bash
 qv <filename> <config>
 ```
-Currently, QV includes syntax highlighting for the following languages:  
-*  C/C++ (`*.c`, `*.h`, `*.cpp`, `*.hpp`, `*.cc`)
-*  Golang (`*.go`)
-*  Python (`*.py`, `*.pyi`)
-*  Rust (`*.rs`, `*.rlib`)
-
-But you can ofcourse modify the source-code to add more! The syntax highlighting is found at like ln 200??? I shall for this tutorial
-use the "C" programming language.
-```bash
-touch "main.c" # Create file
-qv "main.c" # Open file
-```
-I am greeted to this interface:
-[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/startup.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/startup.png)
-Great! It started up! I'm writing a simple Hello World app, so i can just write this:
-[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/helloworld.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/helloworld.png)
-As you can see, the syntax highlighting kicked in right away! Now, i save my app with `Ctrl+S`, then quit with `Ctrl+Q`. Then i can run the
-file with my preferred compiler and i will be done with my task. Now what if i'm managing a huge codebase? How am i supposed to find the invalid 
-reference of variable HLDB? Well, you can find everything with `Ctrl+F`. I press `Ctrl+F` input my text and search with the arrow keys! Then i realize that HLDB
-never existed and i was just crazy. And that's the tutorial!
-
-Oh, and before you go, this text editor is not meant to be anyones main editor, it's way
-to bad for that. No, this editor is meant to be like Nano, a simple command line editor! And, with that, enjoy!
-
-Keybinds
---------
+## Keybinds
 ```
 Ctrl+S - Save
 Ctrl+Q - Quit
 Ctrl+F - Find
 ```
-
-Config
-------
-New feature! Config! With a config file you can change some settings (tab_stop, quit_times etc...), nothing much but i guess
-it's functional. Heres a basic little tutorial for a config.  
-  
-To start, you'd want to create a config file:
-```bash
-touch config.qv # Name it anything you want, but im naming it "config.qv".
-```
-Qv provides a simple configuration language called... Let's say QvScript. To get all
-of the different options for configuration, you have to look inside the source which is `~/qv/src/qv.c`.
-But im going to just set some simple options.
-```bash
-tab_stop=8
-quit_times=10
-```
-tab_stop being where the tab stops (duh) and quit_times being the amount of `Ctrl+Q`'s it takes to quit after
-modifying a file. To run with your config file, simply:
-```bash
-qv <filename> config.qv
-```
-Yeah, cool. Enjoy the project!
 
 **\*\*DISCLAIMER\*\***  
 This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the  

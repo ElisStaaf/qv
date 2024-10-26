@@ -133,17 +133,17 @@ struct editorConfig E;
  * In order add a new theme, define a new (const) struct out of the struct
  * "editorTheme", then add all of the colour values into it in the form of a
  * FG-ANSI colour. Then, just simply change the values of the "T" struct to
- * your themes value (see "ocean" theme example below).
+ * your themes value (see "sonokai" theme example below).
  */
 
-const struct editorTheme ocean = {
-    90, 35, 34, 96,
-    94, 36, 37
+const struct editorTheme sonokai = {
+    90, 31, 32, 96,
+    94, 34, 37, 
 };
 
 struct editorTheme T = {
-    ocean.hl_com, ocean.hl_kw1, ocean.hl_kw2, ocean.hl_str,
-    ocean.hl_num, ocean.hl_find, ocean.hl_nil
+    sonokai.hl_com, sonokai.hl_kw1, sonokai.hl_kw2, sonokai.hl_str,
+    sonokai.hl_num, sonokai.hl_find, sonokai.hl_nil
 };
 
 /* ==================== Syntax Highlighting ====================
@@ -496,7 +496,7 @@ int editorSyntaxToColour(int hl) {
     case HL_STRING: return T.hl_str;
     case HL_NUMBER: return T.hl_num;
     case HL_MATCH: return T.hl_find;
-    default: return 37;
+    default: return T.hl_nil;
     }
 }
 

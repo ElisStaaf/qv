@@ -87,6 +87,16 @@ struct editorSyntax {
     int flags;
 };
 
+struct editorTheme {
+    int hl_com;
+    int hl_kw1;
+    int hl_kw2;
+    int hl_str;
+    int hl_num;
+    int hl_find;
+    int hl_nil;
+};
+
 typedef struct erow {
     int idx;
     int size;
@@ -117,6 +127,24 @@ struct editorConfig {
 };
 
 struct editorConfig E;
+
+/* ==================== Themes ======================
+ * 
+ * In order add a new theme, define a new (const) struct out of the struct
+ * "editorTheme", then add all of the colour values into it in the form of a
+ * FG-ANSI colour. Then, just simply change the values of the "T" struct to
+ * your themes value (see "ocean" theme example below).
+ */
+
+const struct editorTheme ocean = {
+    90, 35, 34, 96,
+    94, 36, 37
+};
+
+struct editorTheme T = {
+    ocean.hl_com, ocean.hl_kw1, ocean.hl_kw2, ocean.hl_str,
+    ocean.hl_num, ocean.hl_find, ocean.hl_nil
+};
 
 /* ==================== Syntax Highlighting ====================
  *
@@ -462,12 +490,12 @@ void editorUpdateSyntax(erow *row) {
 int editorSyntaxToColour(int hl) {
     switch (hl) {
     case HL_COMMENT:
-    case HL_MLCOMMENT: return 31;
-    case HL_KEYWORD1: return 35;
-    case HL_KEYWORD2: return 32;
-    case HL_STRING: return 96;
-    case HL_NUMBER: return 31;
-    case HL_MATCH: return 34;
+    case HL_MLCOMMENT: return T.hl_com;
+    case HL_KEYWORD1: return T.hl_kw1;
+    case HL_KEYWORD2: return T.hl_kw2;
+    case HL_STRING: return T.hl_str;
+    case HL_NUMBER: return T.hl_num;
+    case HL_MATCH: return T.hl_find;
     default: return 37;
     }
 }

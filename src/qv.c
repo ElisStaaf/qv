@@ -137,8 +137,8 @@ struct editorConfig E;
  */
 
 const struct editorTheme sonokai = {
-    90, 31, 32, 96,
-    94, 34, 37, 
+    90, 31, 32, 92,
+    35, 34, 37, 
 };
 
 struct editorTheme T = {

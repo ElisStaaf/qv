@@ -58,6 +58,8 @@ vine <filename> <config>
 Ctrl+S - Save
 Ctrl+Q - Quit
 Ctrl+F - Find
+Ctrl+J - Start of line
+Ctrl+K - End of line
 ```
 
 **\*\*DISCLAIMER\*\***  

@@ -1118,11 +1118,11 @@ void editorProcessKeypress() {
         editorSave();
         break;
 
-    case HOME_KEY:
+    case CTRL_KEY('j'):
         E.cx = 0;
         break;
 
-    case END_KEY:
+    case CTRL_KEY('k'):
         if (E.cy < E.numrows)
             E.cx = E.row[E.cy].size;
         break;

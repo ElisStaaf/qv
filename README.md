@@ -1,7 +1,7 @@
 # Vine Editor
 [![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5&style=for-the-badge)](https://github.com/ElisStaaf/vine)
 [![Version](https://img.shields.io/badge/Version-1.1.4-38c747?style=for-the-badge)](https://github.com/ElisStaaf/vine)
-[![Lang](https://img.shields.io/badge/Lang-C-7c7c7c?logo=c&style=for-the-badge)](https://github.com/ElisStaaf/vine)
+[![Lang](https://img.shields.io/badge/Language-C-7c7c7c?logo=c&style=for-the-badge)](https://github.com/ElisStaaf/vine)
 [![LOC](https://img.shields.io/badge/LOC%20(counted%20by%20cloc)-~900-e11e5f?style=for-the-badge)](https://github.com/ElisStaaf/vine)  
 Vine is a fast and intuitive terminal-based text editor based on the modified "kilo"
 <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 

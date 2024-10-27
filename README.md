@@ -5,8 +5,7 @@
 [![LOC](https://img.shields.io/badge/LOC%20(counted%20by%20cloc)-~900-e11e5f?style=for-the-badge)](https://github.com/ElisStaaf/vine)  
 Vine is a fast and intuitive terminal-based text editor based on the modified "kilo"  
 <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
-editor made by Paige Ruten, which is in turn based on Salvatore Sanfilippo's "kilo"  
-<[https://github.com/antirez/kilo](https://github.com/antirez/kilo)>.
+editor made by Paige Ruten, which is in turn based on Salvatore Sanfilippo's "kilo" <[https://github.com/antirez/kilo](https://github.com/antirez/kilo)>.
 But this version has a _lot_ of improvements! For example: better syntax highlighting
 & even configuration files (this might just be my opinion, but a much better colourscheme as well).
 It also runs  on the C standard library so that's good, i guess!   

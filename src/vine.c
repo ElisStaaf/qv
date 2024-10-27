@@ -46,8 +46,8 @@
 #define VINE_QUIT_TIMES 3
 #define VINE_LINE_NUMBER_PADDING 4
 
-/* Here, we bundle our key (k) with
- * the Ctrl key @ 0x1f. */
+/* This mimics the Ctrl key by switching the
+ * 3 upper bits of the key pressed to 0 */
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
@@ -170,7 +170,7 @@ struct editorTheme T = {
 
 char *C_HL_extensions[] = { ".c", ".h", ".cpp", ".hpp", ".cc", NULL };
 char *C_HL_keywords[] = {
-    "auto", "break", "case", "continue", "default", "do", "else", "enum",  "extern", "for",
+    "auto", "break", "case", "const", "continue", "default", "do", "else", "enum",  "extern", "for",
     "goto", "if", "register", "return", "sizeof", "static",  "struct", "switch", "typedef",
     "union", "volatile", "while", "NULL",  "alignas", "alignof", "and", "and_eq", "asm",
     "bitand", "bitor", "class",  "compl", "constexpr", "const_cast", "deltype", "delete",
@@ -182,7 +182,7 @@ char *C_HL_keywords[] = {
     "#ifndef", "#endif", "#error", "#warning",
 
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-    "void|", "short|", "auto|", "const|", "bool|"
+    "void|", "short|", "auto|", "bool|"
 };
 
 char *GO_HL_extensions[] = { ".go", NULL };
@@ -451,7 +451,9 @@ void editorUpdateSyntax(erow *row) {
 
         if (E.syntax->flags & HL_HIGHLIGHT_NUMBERS) {
             if ((isdigit(c) && (prev_sep || prev_hl == HL_NUMBER)) ||
-                    (c == '.' && prev_hl == HL_NUMBER)) {
+                    ((c == '.' || c == 'x' || c == 'a' || c == 'b' ||
+                    c == 'c' || c == 'd' || c == 'e' || c == 'f') &&
+                    prev_hl == HL_NUMBER)) {
                 row->hl[i] = HL_NUMBER;
                 i++;
                 prev_sep = 0;

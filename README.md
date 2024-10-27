@@ -1,8 +1,8 @@
-# QV: Quantum Visual editor
-[![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/qv)
-[![Version](https://img.shields.io/badge/Version-1.1.4-brightgreen)](https://github.com/ElisStaaf/qv)
-[![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/qv)  
-QV is a fast and intuitive terminal-based text editor based on the modified "kilo"
+# Vine Editor
+[![Build](https://img.shields.io/badge/Build%20(Fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5)](https://github.com/ElisStaaf/vine)
+[![Version](https://img.shields.io/badge/Version-1.1.4-brightgreen)](https://github.com/ElisStaaf/vine)
+[![Lang](https://img.shields.io/badge/Lang-C-lightgrey?logo=c)](https://github.com/ElisStaaf/vine)  
+Vine is a fast and intuitive terminal-based text editor based on the modified "kilo"
 <[https://github.com/snaptoken/kilo-src](https://github.com/snaptoken/kilo-src)> 
 editor made by Paige Ruten, which is in turn based on Salvatore Sanfilippo's "kilo"  
 <[https://github.com/antirez/kilo](https://github.com/antirez/kilo)> .
@@ -10,8 +10,8 @@ But this version has a _lot_ of improvements! For example: better syntax highlig
 & even configuration files (this might just be my opinion, but a much better colourscheme as well).
 It also runs  on the C standard library so that's good, i guess!   
   
-[![File could not be loaded.](https://github.com/ElisStaaf/qv/blob/main/qvimg.png?raw=true)](https://github.com/ElisStaaf/qv/blob/main/qvimg.png)
-QV opened in QV.  
+[![File could not be loaded.](https://github.com/ElisStaaf/vine/blob/main/vineimg.png?raw=true)](https://github.com/ElisStaaf/vine/blob/main/vineimg.png)
+Vine opened in Vine.  
   
 ## Requirements
 * C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
@@ -22,18 +22,18 @@ QV opened in QV.
 To install, you can:
 ```bash
 # Git
-git clone https://github.com/ElisStaaf/qv ~/qv
+git clone https://github.com/ElisStaaf/vine ~/vine
 
 # Gh
-gh repo clone ElisStaaf/qv ~/qv
+gh repo clone ElisStaaf/vine ~/vine
 
 # cURL
-curl -s https://github.com/ElisStaaf/qv/blob/main/{src/qv.c,Makefile,README.md} ~/qv
+curl -s https://github.com/ElisStaaf/vine/blob/main/{src/vine.c,Makefile,README.md} ~/vine
 ```
 
 After this, you'd want to use "make" to initialize an executable:
 ```bash
-cd ~/qv
+cd ~/vine
 sudo make install
 ```
 
@@ -50,7 +50,7 @@ sudo make install
 
 ## Usage
 ```bash
-qv <filename> <config>
+vine <filename> <config>
 ```
 ## Keybinds
 ```

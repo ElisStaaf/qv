@@ -1,6 +1,6 @@
-/* ==================== QV EDITOR ====================
+/* ==================== VINE EDITOR ====================
  *
- * QV is a fork of the modified version of "Kilo" by Snaptoken,
+ * Vine is a fork of the modified version of "Kilo" by Snaptoken,
  * which is licensed under the BSD-Clause-2 License, while all
  * of the modified pieces of code are released Apache License 2.0.
  * Please abide to the fitting licenses under the fitting
@@ -15,8 +15,8 @@
  * <https://viewsourcecode.org/snaptoken/kilo>,
  * it'll be worth your time.
  *
- * This is the QV source code, feel free to contribute on
- * <https://github.com/ElisStaaf/qv>. Or you can just enjoy
+ * This is the Vine source code, feel free to contribute on
+ * <https://github.com/ElisStaaf/vine>. Or you can just enjoy
  * the editor, i won't judge! And with that, enjoy!
  *
  * -- Elis Staaf, 2024
@@ -41,10 +41,10 @@
 #include <time.h>
 #include <unistd.h>
 
-#define QV_VERSION "1.1.4"
-#define QV_TAB_STOP 4
-#define QV_QUIT_TIMES 3
-#define QV_LINE_NUMBER_PADDING 4
+#define VINE_VERSION "1.1.4"
+#define VINE_TAB_STOP 4
+#define VINE_QUIT_TIMES 3
+#define VINE_LINE_NUMBER_PADDING 4
 
 #define CTRL_KEY(k) ((k) & 0x1f)
 
@@ -534,7 +534,7 @@ int editorRowCxToRx(erow *row, int cx) {
     int j;
     for (j = 0; j < cx; j++) {
         if (row->chars[j] == '\t')
-            rx += (QV_TAB_STOP - 1) - (rx % QV_TAB_STOP);
+            rx += (VINE_TAB_STOP - 1) - (rx % VINE_TAB_STOP);
         rx++;
     }
     return rx;
@@ -545,7 +545,7 @@ int editorRowRxToCx(erow *row, int rx) {
     int cx;
     for (cx = 0; cx < row->size; cx++) {
         if (row->chars[cx] == '\t')
-            cur_rx += (QV_TAB_STOP - 1) - (cur_rx % QV_TAB_STOP);
+            cur_rx += (VINE_TAB_STOP - 1) - (cur_rx % VINE_TAB_STOP);
         cur_rx++;
 
         if (cur_rx > rx) return cx;
@@ -560,13 +560,13 @@ void editorUpdateRow(erow *row) {
         if (row->chars[j] == '\t') tabs++;
 
     free(row->render);
-    row->render = malloc(row->size + tabs*(QV_TAB_STOP - 1) + 1);
+    row->render = malloc(row->size + tabs*(VINE_TAB_STOP - 1) + 1);
 
     int idx = 0;
     for (j = 0; j < row->size; j++) {
         if (row->chars[j] == '\t') {
             row->render[idx++] = ' ';
-            while (idx % QV_TAB_STOP != 0) row->render[idx++] = ' ';
+            while (idx % VINE_TAB_STOP != 0) row->render[idx++] = ' ';
         } else {
             row->render[idx++] = row->chars[j];
         }
@@ -870,8 +870,8 @@ void editorScroll() {
     if (E.rx >= E.coloff + E.screencols) {
         E.coloff = E.rx - E.screencols + 1;
     }
-    if (E.rx >= E.coloff + E.screencols - QV_LINE_NUMBER_PADDING - 1) {
-        E.coloff = E.rx - E.screencols + QV_LINE_NUMBER_PADDING + 2;
+    if (E.rx >= E.coloff + E.screencols - VINE_LINE_NUMBER_PADDING - 1) {
+        E.coloff = E.rx - E.screencols + VINE_LINE_NUMBER_PADDING + 2;
     }
 }
 
@@ -883,7 +883,7 @@ void editorDrawRows(struct abuf *ab) {
             if (E.numrows == 0 && y == E.screenrows / 3) {
                 char welcome[80];
                 int welcomelen = snprintf(welcome, sizeof(welcome),
-                "QV editor -- version %s", QV_VERSION);
+                "Vine editor -- version %s", VINE_VERSION);
                 if (welcomelen > E.screencols) welcomelen = E.screencols;
                     int padding = (E.screencols - welcomelen) / 2;
                 if (padding) {
@@ -897,9 +897,9 @@ void editorDrawRows(struct abuf *ab) {
       }
       } else {
       char linenum[32];  // Increased buffer size
-      int linenum_len = snprintf(linenum, sizeof(linenum), "%*d ", QV_LINE_NUMBER_PADDING, filerow + 1);
-      if (linenum_len > QV_LINE_NUMBER_PADDING + 1) {
-        linenum_len = QV_LINE_NUMBER_PADDING + 1;
+      int linenum_len = snprintf(linenum, sizeof(linenum), "%*d ", VINE_LINE_NUMBER_PADDING, filerow + 1);
+      if (linenum_len > VINE_LINE_NUMBER_PADDING + 1) {
+        linenum_len = VINE_LINE_NUMBER_PADDING + 1;
       }
       abAppend(ab, linenum, linenum_len);
       
@@ -993,7 +993,7 @@ void editorRefreshScreen() {
 
   char buf[32];
   int linenum_len = snprintf(NULL, 0, "%d", E.numrows);
-  if (linenum_len < QV_LINE_NUMBER_PADDING) linenum_len = QV_LINE_NUMBER_PADDING;
+  if (linenum_len < VINE_LINE_NUMBER_PADDING) linenum_len = VINE_LINE_NUMBER_PADDING;
   snprintf(buf, sizeof(buf), "\x1b[%d;%dH", (E.cy - E.rowoff) + 1,
                                             (E.rx - E.coloff) + linenum_len + 2);
   abAppend(&ab, buf, strlen(buf));
@@ -1091,7 +1091,7 @@ void editorMoveCursor(int key) {
 }
 
 void editorProcessKeypress() {
-    static int quit_times = QV_QUIT_TIMES;
+    static int quit_times = VINE_QUIT_TIMES;
 
     int c = editorReadKey();
 
@@ -1168,7 +1168,7 @@ void editorProcessKeypress() {
         break;
     }
 
-    quit_times = QV_QUIT_TIMES;
+    quit_times = VINE_QUIT_TIMES;
 }
 
 /* ==================== Init ==================== */

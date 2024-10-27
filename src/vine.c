@@ -46,6 +46,8 @@
 #define VINE_QUIT_TIMES 3
 #define VINE_LINE_NUMBER_PADDING 4
 
+/* Here, we bundle our key (k) with
+ * the Ctrl key @ 0x1f. */
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
@@ -1217,7 +1219,7 @@ void initEditor() {
     E.syntax = NULL;
 
     /* Set default values */
-    E.tab_stop = 8;  /* Default tab stop */
+    E.tab_stop = 4;  /* Default tab stop */
     E.quit_times = 3; /* Default quit times */
 
     if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");

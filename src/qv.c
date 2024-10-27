@@ -41,7 +41,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define QV_VERSION "1.1.3"
+#define QV_VERSION "1.1.4"
 #define QV_TAB_STOP 4
 #define QV_QUIT_TIMES 3
 #define QV_LINE_NUMBER_PADDING 4

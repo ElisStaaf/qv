@@ -1231,10 +1231,7 @@ int main(int argc, char *argv[]) {
     enableRawMode();
     initEditor();
 
-    /* Load configuration if the file is provided */
-    if (argc >= 3) {
-        loadConfig(argv[2]);
-    } else if (argc >= 2) {
+    if (argc >= 2) {
         editorOpen(argv[1]);
     }
 

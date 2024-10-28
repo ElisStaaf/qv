@@ -1177,10 +1177,9 @@ void editorProcessKeypress() {
 
 /* ==================== Init ==================== */
 
-void loadConfig(const char *filename) {
-    FILE *file = fopen(filename, "r");
+void loadConfig() {
+    FILE *file = fopen(".vinerc", "r");
     if (!file) {
-        perror("[ERROR]: Configuration file could not be opened");
         return;
     }
 

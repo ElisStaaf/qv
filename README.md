@@ -47,10 +47,11 @@ sudo make install
 *  Status bar to show state of editor
 *  Line numbers
 *  Theming
+*  Configuration
 
 ## Usage
 ```bash
-vine <filename> <config>
+vine <filename>
 ```
 ## Keybinds
 ```

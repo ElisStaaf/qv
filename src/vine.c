@@ -42,9 +42,8 @@
 #include <unistd.h>
 
 #define VINE_VERSION "1.1.4"
-#define VINE_TAB_STOP 4
-#define VINE_QUIT_TIMES 3
 #define VINE_LINE_NUMBER_PADDING 4
+#define VINE_QUIT_TIMES 3
 
 /* This mimics the Ctrl key by switching the
  * 3 upper bits of the key pressed to 0 */
@@ -124,8 +123,8 @@ struct editorConfig {
     time_t statusmsg_time;
     struct editorSyntax *syntax;
     struct termios orig_termios;
-    int tab_stop;      /* Changed from #define to a variable */
-    int quit_times;    /* Changed from #define to a variable */
+    int tab_stop;
+    int quit_times;
 };
 
 struct editorConfig E;
@@ -538,7 +537,7 @@ int editorRowCxToRx(erow *row, int cx) {
     int j;
     for (j = 0; j < cx; j++) {
         if (row->chars[j] == '\t')
-            rx += (VINE_TAB_STOP - 1) - (rx % VINE_TAB_STOP);
+            rx += (E.tab_stop - 1) - (rx % E.tab_stop);
         rx++;
     }
     return rx;
@@ -549,7 +548,7 @@ int editorRowRxToCx(erow *row, int rx) {
     int cx;
     for (cx = 0; cx < row->size; cx++) {
         if (row->chars[cx] == '\t')
-            cur_rx += (VINE_TAB_STOP - 1) - (cur_rx % VINE_TAB_STOP);
+            cur_rx += (E.tab_stop - 1) - (cur_rx % E.tab_stop);
         cur_rx++;
 
         if (cur_rx > rx) return cx;
@@ -564,13 +563,13 @@ void editorUpdateRow(erow *row) {
         if (row->chars[j] == '\t') tabs++;
 
     free(row->render);
-    row->render = malloc(row->size + tabs*(VINE_TAB_STOP - 1) + 1);
+    row->render = malloc(row->size + tabs*(E.tab_stop - 1) + 1);
 
     int idx = 0;
     for (j = 0; j < row->size; j++) {
         if (row->chars[j] == '\t') {
             row->render[idx++] = ' ';
-            while (idx % VINE_TAB_STOP != 0) row->render[idx++] = ' ';
+            while (idx % E.tab_stop != 0) row->render[idx++] = ' ';
         } else {
             row->render[idx++] = row->chars[j];
         }
@@ -1172,7 +1171,7 @@ void editorProcessKeypress() {
         break;
     }
 
-    quit_times = VINE_QUIT_TIMES;
+    quit_times = E.quit_times;
 }
 
 /* ==================== Init ==================== */
@@ -1218,10 +1217,8 @@ void initEditor() {
     E.statusmsg[0] = '\0';
     E.statusmsg_time = 0;
     E.syntax = NULL;
-
-    /* Set default values */
-    E.tab_stop = 4;  /* Default tab stop */
-    E.quit_times = 3; /* Default quit times */
+    E.tab_stop = 4;
+    E.quit_times = 3;
 
     if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
     E.screenrows -= 2;

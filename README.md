@@ -16,6 +16,7 @@ Vine opened in Vine.
 ## Requirements
 * C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
 * Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
+* CMake <[https://cmake.org/download/](https://cmake.org/download/)>
 * Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
 
 ## Install
@@ -31,10 +32,11 @@ gh repo clone ElisStaaf/vine ~/vine
 curl -s https://github.com/ElisStaaf/vine/blob/main/{src/vine.c,Makefile,README.md} ~/vine
 ```
 
-After this, you'd want to use "make" to initialize an executable:
+After this, you'd want to use "cmake" and "make" to initialize an executable:
 ```bash
 cd ~/vine
-sudo make install
+cmake .
+sudo make
 ```
 
 ## Out of the box features

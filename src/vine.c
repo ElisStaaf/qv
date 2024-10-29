@@ -19,7 +19,8 @@
  * <https://github.com/ElisStaaf/vine>. Or you can just enjoy
  * the editor, i won't judge! And with that, enjoy!
  *
- * -- Elis Staaf, 2024
+ * author :: Elis Staaf
+ * license :: { Apache 2.0 License, BSD Clause 2 License }
  */
 
 /* We need these "sources" for different

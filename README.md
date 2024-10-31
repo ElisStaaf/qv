@@ -15,6 +15,7 @@ Vine opened in Vine.
   
 ## Requirements
 * C compiler (clang, gcc etc.) <[https://gcc.gnu.org/install/](https://gcc.gnu.org/install/)>
+* python3 <[https://www.python.org/downloads/](https://www.python.org/downloads/)>
 * Make <[https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)>
 * CMake <[https://cmake.org/download/](https://cmake.org/download/)>
 * Git or Github CLI (optional) <[https://git-scm.com/downloads](https://git-scm.com/downloads)> <[https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)>
@@ -31,10 +32,24 @@ gh repo clone ElisStaaf/vine ~/vine
 # cURL
 curl -s https://github.com/ElisStaaf/vine/blob/main/{src/vine.c,Makefile,README.md} ~/vine
 ```
-
-After this, you'd want to use "cmake" and "make" to initialize an executable:
+Then, you'd want to `cd` into the vine directory and then configure the editor using the `configure`
+script written in `python3` (that's why you need `python3`):
 ```bash
 cd ~/vine
+./configure
+```
+This generates a sample configuration file in `~/.vinerc`:
+```bash
+tab_stop=4
+```
+But the configuration script also has flags you can pass trough it:
+```
+-n, --no-configure: Skip configuration file
+-r, --rule <rule> <value>: set <rule> to be equal to <value> in config file.
+```
+
+After that, you'd want to use "cmake" and "make" to initialize an executable:
+```bash
 cmake .
 sudo make
 ```

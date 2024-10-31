@@ -1184,7 +1184,7 @@ void editorProcessKeypress() {
 /* ==================== Init ==================== */
 
 void loadConfig() {
-    FILE *file = fopen(".vinerc", "r");
+    FILE *file = fopen(strcat(getenv("HOME"), ".vinerc"), "r");
     if (!file) {
         return;
     }

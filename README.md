@@ -79,7 +79,7 @@ Ctrl+J - Start of line
 Ctrl+K - End of line
 ```
 
-**\*\*DISCLAIMER\*\***
+**\*\*DISCLAIMER\*\***  
 This work is licensed under the BSD-Clause-2-license (for the "kilo" source code), and the
 Apache-2.0-license (For the modified parts of the source code), please abide to each license
 under the fitting circumstances.

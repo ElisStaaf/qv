@@ -131,7 +131,7 @@ struct editorConfig {
 struct editorConfig E;
 
 /* ==================== Themes ======================
- * 
+ *
  * In order add a new theme, define a new (const) struct out of the struct
  * "editorTheme", then add all of the colour values into it in the form of a
  * FG-ANSI colour. Then, just simply change the values of the "T" struct to
@@ -140,7 +140,7 @@ struct editorConfig E;
 
 const struct editorTheme sonokai = {
     90, 31, 32, 92,
-    35, 34, 37, 
+    35, 34, 37,
 };
 
 struct editorTheme T = {
@@ -156,7 +156,7 @@ struct editorTheme T = {
  * dot, it is matched as the last past of the filename, for example ".c".
  * Otherwise the pattern is just searched inside the filename, like "Makefile".
  *
- * The list of keywords to highlight is just a list of words, however if 
+ * The list of keywords to highlight is just a list of words, however if
  * there's a trailing '|' character added at the end, they are highlighted in
  * a different color, so that you can have two different sets of keywords.
  *
@@ -200,7 +200,7 @@ char *PY_HL_keywords[] = {
     "exec", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "not", "or",
     "pass", "print", "raise", "return", "try", "while", "with", "yield",
 
-    "buffer|", "bytearray|", "complex|", "False|", "float|", "frozenset|", "int|", "list|", "long|", 
+    "buffer|", "bytearray|", "complex|", "False|", "float|", "frozenset|", "int|", "list|", "long|",
     "None|", "set|", "str|", "tuple|", "True|", "type|", "unicode|", "xrange|", NULL
 };
 
@@ -912,11 +912,11 @@ void editorDrawRows(struct abuf *ab) {
         linenum_len = VINE_LINE_NUMBER_PADDING + 1;
       }
       abAppend(ab, linenum, linenum_len);
-      
+
       int len = E.row[filerow].rsize - E.coloff;
       if (len < 0) len = 0;
       if (len > E.screencols - linenum_len) len = E.screencols - linenum_len;
-      
+
       char *c = &E.row[filerow].render[E.coloff];
       unsigned char *hl = &E.row[filerow].hl[E.coloff];
       int current_color = -1;

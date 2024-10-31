@@ -62,8 +62,9 @@ also has flags you can pass trough it:
 After that, you'd want to use "cmake" and "make" to initialize an executable:
 
 .. code:: bash
-cmake .
-sudo make
+
+   cmake .
+   sudo make
 
 Out of the box features
 -----------------------

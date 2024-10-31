@@ -36,7 +36,7 @@ Then, you'd want to `cd` into the vine directory and then configure the editor u
 script written in `python3` (that's why you need `python3`):
 ```bash
 cd ~/vine
-./configure.py
+./configure
 ```
 This generates a sample configuration file in `~/.vinerc`:
 ```bash

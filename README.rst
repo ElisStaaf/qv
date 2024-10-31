@@ -68,10 +68,6 @@ sudo make
 Out of the box features
 -----------------------
 *  Syntax highlighting
-   *  C/C++ (`*.c`, `*.h`, `*.cpp`, `*.hpp`, `*.cc`)
-   *  Golang (`*.go`)
-   *  Python (`*.py`, `*.pyi`)
-   *  Rust (`*.rs`, `*.rlib`)
 *  Find
 *  Status bar to show state of editor
 *  Line numbers

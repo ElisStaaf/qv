@@ -27,7 +27,7 @@ Requirements
 ------------
 * `gcc`_ (or any other C compiler) 
 * `python3`_ 
-* `make`_
+* `make`_ or `docker`_
 * `cmake`_
 * `git`_ or `gh`_
 
@@ -95,6 +95,7 @@ Keybinds
 .. _`gcc`: https://gcc.gnu.org/install
 .. _`python3`: https://www.python.org/downloads
 .. _`make`: https://www.gnu.org/software/make
+.. _`docker`: https://docs.docker.com/engine/install/
 .. _`cmake`: https://cmake.org/download
 .. _`git`: https://git-scm.com/downloads 
 .. _`gh`: https://github.com/cli/cli#installation

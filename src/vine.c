@@ -371,7 +371,7 @@ int getWindowSize(int *rows, int *cols) {
 /* ==================== Syntax Highlighting ==================== */
 
 int is_separator(int c) {
-    return isspace(c) || c == '\0' || strchr(",.()+-/*=@#~&%<>[]{}!\\:|;?", c) != NULL;
+    return isspace(c) || c == '\0' || strchr(",.()+-/*^=@#~&%<>[]{}!\\:|;?", c) != NULL;
 }
 
 void editorUpdateSyntax(erow *row) {
@@ -887,11 +887,13 @@ void editorScroll() {
 
 void editorDrawRows(struct abuf *ab) {
     int y;
+    /* TODO: Add more lines with useful
+     * info (like help or something). */
     for (y = 0; y < E.screenrows; y++) {
         int filerow = y + E.rowoff;
         if (filerow >= E.numrows) {
             if (E.numrows == 0 && y == E.screenrows / 3) {
-                char welcome[80];
+                char welcome[128];
                 int welcomelen = snprintf(welcome, sizeof(welcome),
                 "Vine editor -- version %s", VINE_VERSION);
                 if (welcomelen > E.screencols) welcomelen = E.screencols;
@@ -927,7 +929,7 @@ void editorDrawRows(struct abuf *ab) {
           abAppend(ab, "\x1b[7m", 4);
           abAppend(ab, &sym, 1);
           abAppend(ab, "\x1b[m", 3);
-          if (current_color != -1) {
+       if (current_color != -1) {
             char buf[16];
             int clen = snprintf(buf, sizeof(buf), "\x1b[%dm", current_color);
             abAppend(ab, buf, clen);

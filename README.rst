@@ -73,9 +73,8 @@ You *could* also build from source:
 
 .. code:: lua
 
-gcc -o vine src/vine.c
-mv vine <programs_folder>
-
+   gcc -o vine src/vine.c
+   mv vine <programs_folder>
 
 Out of the box features
 -----------------------

@@ -58,12 +58,16 @@ also has flags you can pass trough it:
    -n, --no-configure: Skip configuration file
    -r, --rule <rule> <value>: set <rule> to be equal to <value> in config file.
 
-After that, you'd want to use "cmake" and "make" to initialize an executable:
+After that, you'd want to use ``cmake`` or ``docker`` to initialize an executable:
 
 .. code:: bash
 
+   # CMake
    cmake .
    sudo make
+
+   # Docker
+   Docker build vine
 
 Out of the box features
 -----------------------

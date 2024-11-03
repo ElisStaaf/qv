@@ -48,7 +48,7 @@ Then, you'd want to ``cd`` into the vine directory and then configure the editor
 .. code:: bash
 
    cd ~/vine
-   ./configure
+   ./configure.sh
 
 This generates a sample configuration file in ``~/.vinerc``. But the configuration script
 also has flags you can pass trough it:

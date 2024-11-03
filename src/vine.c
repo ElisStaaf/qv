@@ -8,16 +8,16 @@
  *
  * Thank you Salvatore Sanfilippo (antirez on github.com) for
  * making the original "Kilo" editor & thank you Paige Ruten
- * (paigeruten on github.com, but the project i forked is on her
- * "tutorial account"; snaptoken) for making the  slightly modified
+ * (paigeruten on github.com, but the project I forked is on her
+ * "tutorial account"; snaptoken) for making the slightly modified
  * version. Speaking about Snaptoken, she has a really good tutorial
- * on Kilo, which i followed to make this editor, check it out on
+ * on Kilo, which I followed to make this editor, check it out on
  * <https://viewsourcecode.org/snaptoken/kilo>,
  * it'll be worth your time.
  *
  * This is the Vine source code, feel free to contribute on
  * <https://github.com/ElisStaaf/vine>. Or you can just enjoy
- * the editor, i won't judge! And with that, enjoy!
+ * the editor, I won't judge! And with that, enjoy!
  *
  * author :: Elis Staaf
  * license :: { Apache 2.0 License, BSD Clause 2 License }

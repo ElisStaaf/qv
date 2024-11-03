@@ -70,10 +70,12 @@ After that, you'd want to use ``cmake`` or ``docker`` to initialize an executabl
    Docker build vine
 
 You *could* also build from source:
-```
+
+.. code:: lua
+
 gcc -o vine src/vine.c
-mv vine /usr/bin/vine
-```
+mv vine <programs_folder>
+
 
 Out of the box features
 -----------------------

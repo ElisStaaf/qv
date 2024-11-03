@@ -91,6 +91,7 @@ Keybinds
    Ctrl+S - Save
    Ctrl+Q - Quit
    Ctrl+F - Find
+   Ctrl+X - Delete next char
    Ctrl+J - Start of line
    Ctrl+K - End of line
 

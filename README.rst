@@ -69,13 +69,6 @@ After that, you'd want to use ``cmake`` or ``docker`` to initialize an executabl
    # Docker
    Docker build vine
 
-You *could* also build from source:
-
-.. code:: lua
-
-   gcc -o vine src/vine.c
-   mv vine <programs_folder>
-
 Out of the box features
 -----------------------
 *  Syntax highlighting

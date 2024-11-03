@@ -69,6 +69,12 @@ After that, you'd want to use ``cmake`` or ``docker`` to initialize an executabl
    # Docker
    Docker build vine
 
+You *could* also build from source:
+```
+gcc -o vine src/vine.c
+mv vine /usr/bin/vine
+```
+
 Out of the box features
 -----------------------
 *  Syntax highlighting
@@ -80,7 +86,8 @@ Out of the box features
 
 Usage
 -----
-.. code:: bash
+.. code:: lua
+
     vine <filename>
 
 Keybinds

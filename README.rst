@@ -26,7 +26,6 @@ the C standard library so that's good, i guess!
 Requirements
 ------------
 * `gcc`_ (or any other C compiler) 
-* `python3`_ 
 * `make`_ or `docker`_
 * `cmake`_
 * `git`_ or `gh`_
@@ -44,12 +43,12 @@ To install, you can:
    gh repo clone ElisStaaf/vine ~/vine
 
 Then, you'd want to ``cd`` into the vine directory and then configure the editor using the
-``configure`` script written in ``python3`` (that's why you need ``python3``):
+``configure`` script:
 
 .. code:: bash
 
    cd ~/vine
-   ./configure.py
+   ./configure
 
 This generates a sample configuration file in ``~/.vinerc``. But the configuration script
 also has flags you can pass trough it:
@@ -93,7 +92,6 @@ Keybinds
 .. _`kilo-src`: https://github.com/snaptoken/kilo-src
 .. _`kilo`: https://github.com/antirez/kilo
 .. _`gcc`: https://gcc.gnu.org/install
-.. _`python3`: https://www.python.org/downloads
 .. _`make`: https://www.gnu.org/software/make
 .. _`docker`: https://docs.docker.com/engine/install/
 .. _`cmake`: https://cmake.org/download

@@ -903,10 +903,10 @@ void editorDrawRows(struct abuf *ab) {
         while (padding--) abAppend(ab, " ", 1);
         abAppend(ab, welcome, welcomelen);
       } else {
-        abAppend(ab, "~", 1);
+        abAppend(ab, "~", 1); 
       }
       } else {
-      char linenum[32];  // Increased buffer size
+      char linenum[32];
       int linenum_len = snprintf(linenum, sizeof(linenum), "%*d ", VINE_LINE_NUMBER_PADDING, filerow + 1);
       if (linenum_len > VINE_LINE_NUMBER_PADDING + 1) {
         linenum_len = VINE_LINE_NUMBER_PADDING + 1;
@@ -1116,7 +1116,7 @@ void editorProcessKeypress() {
                                    "Press Ctrl-Q %d more times to quit.", quit_times);
             quit_times--;
             return;
-        }
+        } 
         write(STDOUT_FILENO, "\x1b[2J", 4);
         write(STDOUT_FILENO, "\x1b[H", 3);
         exit(0);
@@ -1140,9 +1140,8 @@ void editorProcessKeypress() {
         break;
 
     case BACKSPACE:
-    case CTRL_KEY('h'):
-    case DEL_KEY:
-        if (c == DEL_KEY) editorMoveCursor(ARROW_RIGHT);
+    case CTRL_KEY('x'):
+        if (c == CTRL_KEY('x')) editorMoveCursor(ARROW_RIGHT);
         editorDelChar();
         break;
 

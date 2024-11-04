@@ -19,6 +19,8 @@ version has a *lot* of improvements. For example more syntax highlighting and ev
 files (this might just be my opinion, but a much better colourscheme as well). It also runs on 
 the C standard library so that's good, i guess!
 
+**DISCLAIMER:** This is not a UTF-8 text editor, and I have no idea how to implement it. Sue me.
+
 .. image ::  https://github.com/ElisStaaf/vine/blob/main/vineimg.png?raw=true
    :alt: Vine opened in Vine
    :target: https://github.com/ElisStaaf/vine

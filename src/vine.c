@@ -179,7 +179,7 @@ char *C_HL_keywords[] = {
     "#ifndef", "#endif", "#error", "#warning",
 
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-    "void|", "short|", "auto|", "bool|"
+    "void|", "short|", "auto|", "bool|",
 };
 
 char *GO_HL_extensions[] = { ".go", NULL };

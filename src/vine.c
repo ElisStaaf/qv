@@ -54,7 +54,6 @@ enum editorKey {
     ARROW_RIGHT,
     ARROW_UP,
     ARROW_DOWN,
-    DEL_KEY,
     HOME_KEY,
     END_KEY,
     PAGE_UP,
@@ -303,7 +302,6 @@ int editorReadKey() {
                 if (seq[2] == '~') {
                     switch (seq[1]) {
                     case '1': return HOME_KEY;
-                    case '3': return DEL_KEY;
                     case '4': return END_KEY;
                     case '5': return PAGE_UP;
                     case '6': return PAGE_DOWN;
@@ -1035,7 +1033,7 @@ char *editorPrompt(char *prompt, void (*callback)(char *, int)) {
         editorRefreshScreen();
 
         int c = editorReadKey();
-        if (c == DEL_KEY || c == CTRL_KEY('h') || c == BACKSPACE) {
+        if (c == CTRL_KEY('x') || c == BACKSPACE) {
             if (buflen != 0) buf[--buflen] = '\0';
         } else if (c == '\x1b') {
             editorSetStatusMessage("");
@@ -1116,7 +1114,7 @@ void editorProcessKeypress() {
                                    "Press Ctrl-Q %d more times to quit.", quit_times);
             quit_times--;
             return;
-        } 
+        }
         write(STDOUT_FILENO, "\x1b[2J", 4);
         write(STDOUT_FILENO, "\x1b[H", 3);
         exit(0);

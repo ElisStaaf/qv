@@ -1133,6 +1133,10 @@ void editorProcessKeypress() {
             E.cx = E.row[E.cy].size;
         break;
 
+    case CTRL_KEY('d'):
+        editorDelRow(E.cy);
+        break;
+
     case CTRL_KEY('f'):
         editorFind();
         break;

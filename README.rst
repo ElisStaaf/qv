@@ -92,6 +92,7 @@ Keybinds
    Ctrl+Q - Quit
    Ctrl+F - Find
    Ctrl+X - Delete next char
+   Ctrl+D - Delete current line
    Ctrl+J - Start of line
    Ctrl+K - End of line
 

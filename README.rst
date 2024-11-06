@@ -1,15 +1,15 @@
 Vine Editor
 ===========
-.. image:: https://img.shields.io/badge/Build%20(fedora)-passing-2a7fd5?logo=fedora&labelColor=272727&logoColor=2a7fd5&style=for-the-badge
+.. image:: https://img.shields.io/badge/Build%20(fedora)-passing-2a7fd5?logo=fedora&logoColor=2a7fd5&style=for-the-badge
    :alt: Build = Passing
    :target: https://github.com/ElisStaaf/vine
-.. image:: https://img.shields.io/badge/Version-net/1-38c747?labelColor=272727&style=for-the-badge
+.. image:: https://img.shields.io/badge/Version-net/1-38c747?style=for-the-badge
    :alt: Version = NET/1
    :target: https://github.com/ElisStaaf/vine
-.. image:: https://img.shields.io/badge/Language-C-272727?logo=c&logoColor=white&labelColor=blue&&style=for-the-badge
+.. image:: https://img.shields.io/badge/Language-C-grey?logo=c&logoColor=white&labelColor=blue&style=for-the-badge
    :alt: Language = C
    :target: https://github.com/ElisStaaf/vine
-.. image:: https://img.shields.io/badge/LOC%20(counted%20by%20cloc)-~900-e11e5f?labelColor=272727&style=for-the-badge
+.. image:: https://img.shields.io/badge/LOC%20(counted%20by%20cloc)-~900-e11e5f?style=for-the-badge
    :alt: LOC = ~900
    :target: https://github.com/ElisStaaf/vine
 

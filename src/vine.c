@@ -165,7 +165,8 @@ struct editorTheme T = {
  * and must be provided as well (see the C language example).
  */
 
-char *C_HL_extensions[] = { ".c", ".h", ".cpp", ".hpp", ".cc", NULL };
+char *C_HL_extensions[] = { ".c", ".h", ".cpp", ".hpp",
+                            ".cc", ".hh", ".cxx", ".hxx", NULL };
 char *C_HL_keywords[] = {
     "auto", "break", "case", "const", "continue", "default", "do", "else", "enum",  "extern", "for",
     "goto", "if", "register", "return", "sizeof", "static",  "struct", "switch", "typedef",

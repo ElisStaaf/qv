@@ -19,8 +19,9 @@
  * <https://github.com/ElisStaaf/vine>. Or you can just enjoy
  * the editor, I won't judge! And with that, enjoy!
  *
- * author :: Elis Staaf
- * license :: { Apache 2.0 License, BSD Clause 2 License }
+ * Vine was made by Elis Staaf and released under the
+ * Apache-2.0-license (but the original kilo is licensed
+ * under BSD-clause-2-license). Enjoy!
  */
 
 #define _DEFAULT_SOURCE

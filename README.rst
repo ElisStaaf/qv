@@ -28,7 +28,7 @@ the C standard library so that's good, i guess!
 Requirements
 ------------
 * `gcc`_ (or any other C compiler) 
-* `make`_ or `docker`_
+* `make`_ or `meson`_
 * `cmake`_
 * `git`_ or `gh`_
 
@@ -68,8 +68,10 @@ After that, you'd want to use ``cmake`` or ``docker`` to initialize an executabl
    cmake .
    sudo make
 
-   # Docker
-   Docker build vine
+   # Meson
+   meson setup build && cd build
+   meson compile
+   meson install
 
 Out of the box features
 -----------------------
@@ -102,7 +104,7 @@ Keybinds
 .. _`kilo`: https://github.com/antirez/kilo
 .. _`gcc`: https://gcc.gnu.org/install
 .. _`make`: https://www.gnu.org/software/make
-.. _`docker`: https://docs.docker.com/engine/install/
+.. _`meson`: https://mesonbuild.com/Getting-meson.html
 .. _`cmake`: https://cmake.org/download
 .. _`git`: https://git-scm.com/downloads 
 .. _`gh`: https://github.com/cli/cli#installation

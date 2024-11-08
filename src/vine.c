@@ -192,7 +192,8 @@ char *GO_HL_keywords[] = {
     "uint32|", "uint64|", "string|", "bool|", NULL
 };
 
-char *PY_HL_extensions[] = { ".py", "pyi", NULL };
+char *PY_HL_extensions[] = { ".py", "pyi", ".xpy", "pyx",
+                             ".pyw", ".ipynb", NULL };
 char *PY_HL_keywords[] = {
     "and", "as", "assert", "break", "class", "continue", "def", "del", "elif", "else", "except",
     "exec", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "not", "or",

@@ -7,7 +7,21 @@ project( 'vine', 'c',
   license : 'Apache-2.0'
 )
 
-src = 'src/vine.c'
-bin = 'vine'
+dirs = include_directories(
+  'src',
+)
 
-executable(bin, src)
+source = '*.c'
+bin    = 'vine'
+
+cflags = []
+cflags += [
+  '-Wall', '-Wextra',
+  '-pedantic', '-std=c99'
+]
+
+executable(bin, src,
+  install : true,
+  c_args : cflags,
+  include_directories : dirs
+)

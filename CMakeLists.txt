@@ -1,15 +1,3 @@
-#[==[
-CMake build, I recommend building the
-project like this:
-
-cmake .
-sudo make
-
-"sudo make" is used because the project
-is placed in your "/usr/bin" (need
-permissions).
-]==]#
-
 cmake_minimum_required(VERSION 3.5)
 
 set(PROJECT_NAME "vine")

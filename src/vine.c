@@ -215,7 +215,7 @@ char *RUST_HL_keywords[] = {
 
     "i8|", "i16|", "i32|", "i64|", "i128|", "isize|", "u8|", "u16|", "u32|", "u64|", "u128|", "usize|",
     "f32|", "f64|", "bool|", "char|", "Box|", "Option|", "Some|", "None|", "Result|", "Ok|", "Err|",
-    "String|", "Vec|", "fn|", "let|", "const|", "mod|", "struct|", "enum|", "trait|", "union|", "self|",
+    "String|", "Vec|", "let|", "const|", "mod|", "struct|", "enum|", "trait|", "union|", "self|",
     "true|", "false|", NULL
 };
 

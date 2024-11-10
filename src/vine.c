@@ -21,7 +21,9 @@
  *
  * Vine was made by Elis Staaf and released under the
  * Apache-2.0-license (but the original kilo is licensed
- * under BSD-clause-2-license). Enjoy!
+ * under the BSD-clause-2-license, so you also have to
+ * follow that license for the original, unmodified
+ * parts of the source code). Enjoy!
  */
 
 #define _DEFAULT_SOURCE

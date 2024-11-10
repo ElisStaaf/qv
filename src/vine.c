@@ -496,12 +496,12 @@ int editorSyntaxToColour(int hl) {
     switch (hl) {
     case HL_COMMENT:
     case HL_MLCOMMENT: return T.hl_com;
-    case HL_KEYWORD1: return T.hl_kw1;
-    case HL_KEYWORD2: return T.hl_kw2;
-    case HL_STRING: return T.hl_str;
-    case HL_NUMBER: return T.hl_num;
-    case HL_MATCH: return T.hl_find;
-    default: return T.hl_nil;
+    case HL_KEYWORD1:  return T.hl_kw1;
+    case HL_KEYWORD2:  return T.hl_kw2;
+    case HL_STRING:    return T.hl_str;
+    case HL_NUMBER:    return T.hl_num;
+    case HL_MATCH:     return T.hl_find;
+    default:           return T.hl_nil;
     }
 }
 
@@ -1218,20 +1218,20 @@ void loadConfig() {
 }
 
 void initEditor() {
-    E.cx = 0;
-    E.cy = 0;
-    E.rx = 0;
-    E.rowoff = 0;
-    E.coloff = 0;
-    E.numrows = 0;
-    E.row = NULL;
-    E.dirty = 0;
-    E.filename = NULL;
-    E.statusmsg[0] = '\0';
+    E.cx             = 0;
+    E.cy             = 0;
+    E.rx             = 0;
+    E.rowoff         = 0;
+    E.coloff         = 0;
+    E.numrows        = 0;
+    E.row            = NULL;
+    E.dirty          = 0;
+    E.filename       = NULL;
+    E.statusmsg[0]   = '\0';
     E.statusmsg_time = 0;
-    E.syntax = NULL;
-    E.tab_stop = 4;
-    E.quit_times = 3;
+    E.syntax         = NULL;
+    E.tab_stop       = 4;
+    E.quit_times     = 3;
 
     if (getWindowSize(&E.screenrows, &E.screencols) == -1) die("getWindowSize");
     E.screenrows -= 2;

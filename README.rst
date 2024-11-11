@@ -28,7 +28,7 @@ the C standard library so that's good, i guess!
 Requirements
 ------------
 * `gcc`_ (or any other C compiler) 
-* `make`_ or `meson`_
+* `make`_
 * `cmake`_
 * `git`_ or `gh`_
 
@@ -44,43 +44,13 @@ To install, you can:
    # gh
    gh repo clone ElisStaaf/vine ~/vine
 
-Then, you'd want to ``cd`` into the vine directory and then configure the editor using the
-``configure`` script:
-
-.. code:: bash
-
-   cd ~/vine
-   ./configure.sh
-
-This generates a sample configuration file in ``~/.vinerc``. But the configuration script
-also has flags you can pass trough it:
-
-::
-
-   -n, --no-configure: Skip configuration file
-   -r, --rule <rule> <value>: set <rule> to be equal to <value> in config file.
-
-After that, you'd want to use ``cmake`` or ``docker`` to initialize an executable:
+After that, you'd want to use ``cmake`` to initialize an executable:
 
 .. code:: bash
 
    # CMake
    cmake .
    sudo make
-
-   # Meson
-   meson setup build && cd build
-   meson compile
-   meson install
-
-Out of the box features
------------------------
-*  Syntax highlighting
-*  Find
-*  Status bar to show state of editor
-*  Line numbers
-*  Theming
-*  Configuration
 
 Usage
 -----
@@ -104,7 +74,6 @@ Keybinds
 .. _`kilo`: https://github.com/antirez/kilo
 .. _`gcc`: https://gcc.gnu.org/install
 .. _`make`: https://www.gnu.org/software/make
-.. _`meson`: https://mesonbuild.com/Getting-meson.html
 .. _`cmake`: https://cmake.org/download
 .. _`git`: https://git-scm.com/downloads 
 .. _`gh`: https://github.com/cli/cli#installation

@@ -52,7 +52,7 @@
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
-    BACKSPACE = 127,
+    BACKSPACE  = 127,
     ARROW_LEFT = 1000,
     ARROW_RIGHT,
     ARROW_UP,
@@ -183,7 +183,7 @@ char *C_HL_keywords[] = {
     "#ifndef", "#endif", "#error", "#warning",
 
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
-    "void|", "short|", "auto|", "bool|",
+    "void|", "short|", "auto|", "bool|", NULL
 };
 
 char *GO_HL_extensions[] = { ".go", NULL };
@@ -278,11 +278,11 @@ void enableRawMode() {
     atexit(disableRawMode);
 
     struct termios raw = E.orig_termios;
-    raw.c_iflag &= ~(BRKINT | ICRNL | INPCK | ISTRIP | IXON);
-    raw.c_oflag &= ~(OPOST);
-    raw.c_cflag |= (CS8);
-    raw.c_lflag &= ~(ECHO | ICANON | IEXTEN | ISIG);
-    raw.c_cc[VMIN] = 0;
+    raw.c_iflag     &= ~(BRKINT | ICRNL | INPCK | ISTRIP | IXON);
+    raw.c_oflag     &= ~(OPOST);
+    raw.c_cflag     |= (CS8);
+    raw.c_lflag     &= ~(ECHO | ICANON | IEXTEN | ISIG);
+    raw.c_cc[VMIN]  = 0;
     raw.c_cc[VTIME] = 1;
 
     if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1) die("tcsetattr");
@@ -330,7 +330,6 @@ int editorReadKey() {
             case 'F': return END_KEY;
             }
         }
-
         return '\x1b';
     } else {
         return c;

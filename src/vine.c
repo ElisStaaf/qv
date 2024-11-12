@@ -206,7 +206,7 @@ char *PY_HL_keywords[] = {
     "None|", "set|", "str|", "tuple|", "True|", "type|", "unicode|", "xrange|", NULL
 };
 
-char *RUST_HL_extensions[] = { ".rs", ".rlib", NULL };
+char *RUST_HL_extensions[] = { ".rs", NULL };
 char *RUST_HL_keywords[] = {
     "as", "async", "await", "const", "crate", "dyn", "enum", "extern", "fn", "impl", "let",
     "mod", "move", "mut", "pub", "ref", "Self", "static", "struct", "super", "trait", "type",

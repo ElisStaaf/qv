@@ -663,8 +663,8 @@ void editorInsertNewline() {
     } else {
         erow *row = &E.row[E.cy];
         editorInsertRow(E.cy + 1, &row->chars[E.cx], row->size - E.cx);
-        row = &E.row[E.cy];
-        row->size = E.cx;
+        row                   = &E.row[E.cy];
+        row->size             = E.cx;
         row->chars[row->size] = '\0';
         editorUpdateRow(row);
     }
@@ -673,8 +673,8 @@ void editorInsertNewline() {
 }
 
 void editorDelChar() {
-    if (E.cy == E.numrows) return;
-    if (E.cx == 0 && E.cy == 0) return;
+    if (E.cy == E.numrows ||
+       (E.cx == 0 && E.cy == 0)) return;
 
     erow *row = &E.row[E.cy];
     if (E.cx > 0) {

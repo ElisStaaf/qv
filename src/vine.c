@@ -189,11 +189,12 @@ char *C_HL_keywords[] = {
 
 char *GO_HL_extensions[] = { ".go", NULL };
 char *GO_HL_keywords[] = {
-    "if", "for", "range", "while", "defer", "switch", "case", "else", "func", "package",
-    "import", "type", "struct", "import", "const", "var", "make", "chan",
+    "if", "else", "switch", "case", "func", "then", "for", "var", "type", "interface", "const", "range",
+    "return", "struct", "default", "iota", "nil", "package", "import", "map", "break", "continue",
 
-    "nil|", "true|", "false|", "error|", "err|", "int|", "int32|", "int64|", "uint|",
-    "uint32|", "uint64|", "string|", "bool|", NULL
+    "int", "int8", "int16", "int32", "int64", "uint", "uint8", "uint16", "uint32", "uint64",
+    "float32", "float64", "byte", "rune", "bool", "string", "complex64", "complex128",
+    "any", "error", "comparable", NULL
 };
 
 char *PY_HL_extensions[] = { ".py", "pyi", ".xpy", "pyx",

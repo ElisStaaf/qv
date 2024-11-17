@@ -48,7 +48,6 @@ After that, you'd want to use ``cmake`` to initialize an executable:
 
 .. code:: bash
 
-   # CMake
    cmake .
    sudo make
 

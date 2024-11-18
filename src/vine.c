@@ -181,7 +181,7 @@ char *C_HL_keywords[] = {
     "reinterpret_cast", "static_assert", "static_cast", "template", "this",
     "thread_local", "throw", "true", "try", "typeid", "typename", "virtual",
     "xor", "xor_eq", "#define", "#include", "#if", "ifdef", "#ifndef",
-    "#endif", "#error", "#warning",
+    "#endif", "#error", "#warning", "#pragma",
 
     "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
     "void|", "short|", "auto|", "bool|", NULL

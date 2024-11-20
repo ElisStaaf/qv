@@ -12,6 +12,7 @@ DISCLAIMER: This is not a UTF-8 text editor, and I have no idea how to implement
 
 Requirements
 ------------
+
 * https://gcc.gnu.org/install
 * https://www.gnu.org/software/make
 * https://cmake.org/download
@@ -19,6 +20,7 @@ Requirements
 
 Install
 -------
+
 To install, firstly clone the repo:
 
     git clone https://github.com/ElisStaaf/vine ~/vine

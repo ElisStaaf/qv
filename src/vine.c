@@ -264,7 +264,7 @@ struct editorSyntax HLDB[] = {
     },
 };
 
-#define HLDB_ENTRIES (sizeof(HLDB) / sizeof(HLDB[0]))
+#define HLDB_ENTRIES (sizeof(HLDB) / sizeof(*HLDB))
 
 void editorSetStatusMessage(const char *fmt, ...);
 void editorRefreshScreen();

@@ -28,28 +28,28 @@ Install
 -------
 To install, firstly clone the repo:
 ```sh
-    git clone https://github.com/ElisStaaf/vine ~/vine
+git clone https://github.com/ElisStaaf/vine ~/vine
 ```
 
 After that, you'd want to use ``cmake`` to initialize an executable:
 ```sh
-    cmake .
-    sudo make
+cmake .
+sudo make
 ```
 
 Usage
 -----
 ```sh
-     vine <filename>
+vine <filename>
 ```
 Keybinds
 --------
 ```
-   Ctrl+S - Save
-   Ctrl+Q - Quit
-   Ctrl+F - Find
-   Ctrl+X - Delete next char
-   Ctrl+D - Delete current line
-   Ctrl+J - Start of line
-   Ctrl+K - End of line
+Ctrl+S - Save
+Ctrl+Q - Quit
+Ctrl+F - Find
+Ctrl+X - Delete next char
+Ctrl+D - Delete current line
+Ctrl+J - Start of line
+Ctrl+K - End of line
 ```
